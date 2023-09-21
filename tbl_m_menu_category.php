@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 "active" => "Y",
                 "name" => "GUIDE"
             ]
-            ];
+            ]
     ];
     header('Content-Type: application/json');
     echo json_encode($response);

@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 "value" => "002",
                 "active" => "Y"
             ]
-            ];
+            ]
     ];
     header('Content-Type: application/json');
     echo json_encode($response);
