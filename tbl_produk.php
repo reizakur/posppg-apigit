@@ -182,8 +182,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo json_encode($response);
 }else{
     $response = [
-        "status" => 401,
-        "message" => "Unauthorized"
+        "status" => 201,
+        "message" => "Failed",
     ];
     echo json_encode($response);
 }
