@@ -2,8 +2,8 @@
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $company = $_POST['company']; 
     $geturl = $_POST['geturl']; 
-    $id_m_warehouse = $_POST['id_m_warehouse'];
-    if($id_m_warehouse == '2'){
+    $m_warehouse_icpl = $_POST['m_warehouse_icpl'];
+    if($m_warehouse_icpl == '2'){
      $data = [
      [
         "id" => 1,
@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ]
     ];
 
-    }else if ($id_m_warehouse == '3'){
+    }else if ($m_warehouse_icpl == '3'){
        $data = [
             [
                "id" => 1,
