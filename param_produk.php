@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ],
     ];
 
-    }else if ($id_product == '3'){
+    }else if ($id_product == '003'){
        $data = [
         [
             "id" => 2,
