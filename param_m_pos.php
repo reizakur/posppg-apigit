@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // echo($data);
     echo("mati listrik");
     // Check if the decoding was successful
-    if ($data === null) {
+    if ($data == null) {
         echo("Failed to decode JSON.");
     }else{
         echo("mati hatiiii");
