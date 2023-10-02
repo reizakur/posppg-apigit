@@ -12,11 +12,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $data = json_decode($datamposline);
     echo("mati listrik123");
-    echo($data);
+    // echo($data);
     echo("mati listrik");
     // Check if the decoding was successful
     if ($data === null) {
-        die("Failed to decode JSON.");
+        echo("Failed to decode JSON.");
     }
     
     // Loop through the array
