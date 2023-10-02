@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $datamposline = $_POST['datamposline'];
     echo($datampos); 
     echo("damn 123123");
-    // echo($datamposline);
+    echo($datamposline);
     // die();
 
     $data = json_decode($datamposline, true);
