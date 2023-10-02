@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($data === null) {
         echo("Failed to decode JSON.");
     }else{
-    
+        echo("mati hatiiii");
     // Loop through the array
     foreach ($data as $item) {
         echo "ID: " . $item['id'] . "<br>";
