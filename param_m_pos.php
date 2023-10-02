@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Check if the decoding was successful
     if ($data === null) {
         echo("Failed to decode JSON.");
-    }
+    }else{
     
     // Loop through the array
     foreach ($data as $item) {
@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Updated By: " . $item['updated_by'] . "<br>";
         echo "<hr>";
     }
-
+}
     // Insert data into the database (replace with your actual table and column names)
     $sql = "INSERT INTO your_table_name (company, geturl, id_m_warehouse_icpl) VALUES (?, ?, ?)";
     $stmt = $conn->prepare($sql);
