@@ -1,4 +1,5 @@
 <?php
+//
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $company = $_POST['company']; 
     $geturl = $_POST['geturl']; 
