@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo($datamposline);
     // die();
 
-    $data = json_decode($datamposline);
+    $data = json_encode($datamposline);
     echo("mati listrik123");
     // echo($data);
     echo("mati listrik");
