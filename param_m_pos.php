@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // echo($datamposline);
     // die();
 
-    $data = json_decode($jsonData, true);
+    $data = json_decode($datamposline, true);
 
     // Check if the decoding was successful
     if ($data === null) {
