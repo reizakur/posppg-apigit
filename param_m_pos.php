@@ -5,7 +5,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $geturl = $_POST['geturl']; 
     $datampos = $_POST['datampos'];
     $datamposline = $_POST['datamposline'];
-    echo($datampos);
+    echo($datampos); 
+    echo("damn 123123");
     echo($datamposline);
     die();
     
