@@ -10,19 +10,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo($datamposline);
     // die();
 
-    $data = json_encode($_POST['datamposline'], true);
+    $data = json_decode($_POST['datamposline'], true);
     echo("mati listrik123");
-    // echo($data);
+    echo($data);
     echo("mati listrik");
     // Check if the decoding was successful
     if ($data == null) {
         echo("Failed to decode JSON.");
     }else{
-        echo("mati hatiiii");
+        // echo("mati hatiiii");
     // Loop through the array
     foreach ($data as $item) {
         echo("damn indonesia");
-        // echo "ID: " . $item['id'] . "<br>";
+        echo "ID: " . $item['id'] . "<br>";
         // echo "POS ID: " . $item['pos_id'] . "<br>";
         // echo "Product ID: " . $item['product_id'] . "<br>";
         // echo "Quantity: " . $item['qty'] . "<br>";
