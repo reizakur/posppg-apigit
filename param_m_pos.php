@@ -21,28 +21,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // echo("mati hatiiii");
     // Loop through the array
     foreach ($data as $item) {
-        echo("damn indonesia");
-        echo "ID: " . $item['id'] . "<br>";
-        // echo "POS ID: " . $item['pos_id'] . "<br>";
-        // echo "Product ID: " . $item['product_id'] . "<br>";
-        // echo "Quantity: " . $item['qty'] . "<br>";
-        // echo "Price: " . $item['price'] . "<br>";
-        // echo "Tax Amount: " . $item['taxamt'] . "<br>";
-        // echo "Discount Amount: " . $item['discountamt'] . "<br>";
-        // echo "Price List: " . $item['pricelist'] . "<br>";
-        // echo "Transaction Time: " . $item['trxtime'] . "<br>";
-        // echo "Created At: " . $item['created_at'] . "<br>";
-        // echo "Updated At: " . $item['updated_at'] . "<br>";
-        // echo "Created By: " . $item['created_by'] . "<br>";
-        // echo "Updated By: " . $item['updated_by'] . "<br>";
-        // echo "<hr>";
+        $id = mysqli_real_escape_string($conn, $item['id']);
+        $pos_id = mysqli_real_escape_string($conn, $item['pos_id']);
+        $product_id = mysqli_real_escape_string($conn, $item['product_id']);
+        $qty = mysqli_real_escape_string($conn, $item['qty']);
+        $price = mysqli_real_escape_string($conn, $item['price']);
+        $taxamt = mysqli_real_escape_string($conn, $item['taxamt']);
+        $discountamt = mysqli_real_escape_string($conn, $item['discountamt']);
+        $pricelist = mysqli_real_escape_string($conn, $item['pricelist']);
+        $trxtime = mysqli_real_escape_string($conn, $item['trxtime']);
+        $created_at = mysqli_real_escape_string($conn, $item['created_at']);
+        $updated_at = mysqli_real_escape_string($conn, $item['updated_at']);
+        $created_by = mysqli_real_escape_string($conn, $item['created_by']);
+        $updated_by = mysqli_real_escape_string($conn, $item['updated_by']);
+    
+        // Define the SQL INSERT statement
+        $sql = "INSERT INTO m_posline (id, pos_id, product_id, qty, price, taxamt, discountamt, pricelist, trxtime, created_at, updated_at, created_by, updated_by)
+                VALUES ('$id', '$pos_id', '$product_id', '$qty', '$price', '$taxamt', '$discountamt', '$pricelist', '$trxtime', '$created_at', '$updated_at', '$created_by', '$updated_by')";
+      if (mysqli_query($conn, $sql)) {
+        echo "Record inserted successfully.<br>";
+    } else {
+        echo "Error inserting record: " . mysqli_error($conn) . "<br>";
+    }
     }
 }
     // Insert data into the database (replace with your actual table and column names)
-    $sql = "INSERT INTO your_table_name (company, geturl, id_m_warehouse_icpl) VALUES (?, ?, ?)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("", $company, $geturl, $id_m_warehouse_icpl);
-
+   
     if ($stmt->execute()) {
         echo "Data inserted successfully.";
     } else {
