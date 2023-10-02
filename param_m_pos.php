@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo($datamposline);
     // die();
 
-    $data = json_encode($datamposline);
+    // $data = json_encode($datamposline);
     echo("mati listrik123");
     // echo($data);
     echo("mati listrik");
@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }else{
         echo("mati hatiiii");
     // Loop through the array
-    foreach ($data as $item) {
+    foreach ($datamposline as $item) {
         echo("damn indonesia");
         // echo "ID: " . $item['id'] . "<br>";
         // echo "POS ID: " . $item['pos_id'] . "<br>";
