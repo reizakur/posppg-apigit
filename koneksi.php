@@ -1,9 +1,9 @@
 <?php
 // Database configuration
 $servername = "localhost"; // Replace with your database server hostname or IP address
-$username = "dara1799_ikhlas"; // Replace with your database username
+$username = "dara1799_dummy"; // Replace with your database username
 $password = "4215kurnia"; // Replace with your database password
-$database = "dara1799_ikhlas"; // Replace with your database name
+$database = "dara1799_dummy"; // Replace with your database name
 
 // Create a database connection
 $conn = new mysqli($servername, $username, $password, $database);

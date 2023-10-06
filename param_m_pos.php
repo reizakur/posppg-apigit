@@ -15,12 +15,12 @@ foreach ($data['data'] as $item) {
         $id = $item['id'];
         $documentno = $item['documentno'];
         $ranno = $item['ranno'];
+        $syncedbi = $item['syncedbi'];
+        $syncedadem = $item['syncedadem'];
         $dateordered = $item['dateordered'];
         $bonmanual = $item['bonmanual'];
         $description = $item['description'];
         $trxtime = $item['trxtime'];
-        $syncedbi = $item['syncedbi'];
-        $syncedadem = $item['syncedadem'];
         $warehouse_id = $item['warehouse_id'];
         $cashier_id = $item['cashier_id'];
         $customer_id = $item['customer_id'];
@@ -65,7 +65,7 @@ foreach ($data['data'] as $item) {
         $created_by = $payment['created_by'];
         $updated_by = $payment['updated_by'];
 
-        $sqlsatu = mysqli_query($con,"insert into m_vpospayment 
+        $sqlsatu = mysqli_query($con,"insert into m_pospayment 
         (id, pos_id, invoicedamt, payamt, changeamt, ptype, edc_id, card_id, cardnumber, cardname, trxtime, created_at, updated_at, created_by, updated_by)
         values 
         ('$id', '$pos_id', '$invoicedamt', '$payamt', '$changeamt', '$ptype', '$edc_id', '$card_id', '$cardnumber', '$cardname', '$trxtime', '$created_at', '$updated_at', '$created_by', '$updated_by')");
@@ -133,7 +133,7 @@ foreach ($data['data'] as $item) {
               $updated_by = $komisi['updated_by'];
               
 
-              $sqlsatu = mysqli_query($con,"insert into m_vpos_komisi 
+              $sqlsatu = mysqli_query($con,"insert into m_pos_komisi 
               (pos_id, posline_id, partner_id, totalamt, komisi, komisiamt, payment_id, created_at, updated_at, created_by, updated_by) 
               values 
               ('$pos_id', '$posline_id', '$partner_id', '$totalamt', '$komisi', '$komisiamt', '$payment_id', '$created_at', '$updated_at', '$created_by', '$updated_by')");
@@ -165,7 +165,7 @@ foreach ($data['data'] as $item) {
             $created_by = $treatment['created_by'];
             $updated_by = $treatment['updated_by'];
 
-            $sqlsatu = mysqli_query($con,"insert into m_vpos_treatment 
+            $sqlsatu = mysqli_query($con,"insert into m_pos_treatment 
             (pos_id, posline_id, terapis_id, room_id, created_at, updated_at, created_by, updated_by) 
             values 
             ('$pos_id', '$posline_id', '$terapis_id', '$room_id', '$created_at', '$updated_at', '$created_by', '$updated_by')");
@@ -198,7 +198,7 @@ foreach ($data['data'] as $item) {
 
 
 
-            $sqlsatu = mysqli_query($con,"insert into m_vposline_promo 
+            $sqlsatu = mysqli_query($con,"insert into m_posline_promo 
             (pos_id, posline_id, promo_id, promoline_id, qty, discount, discountamt, created_at, updated_at, created_by, updated_by) 
             values 
             ('$pos_id', '$posline_id', '$promo_id', '$promoline_id', '$qty', '$discount', '$discountamt', '$created_at', '$updated_at', '$created_by', '$updated_by')");
