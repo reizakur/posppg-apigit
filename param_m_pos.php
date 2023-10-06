@@ -31,7 +31,7 @@ foreach ($data['data'] as $item) {
         $created_by = $item['created_by'];
         $updated_by = $item['updated_by'];
          
-        $sqlsatu = mysqli_query($con,"insert into  m_pos 
+        $sqlsatu = mysqli_query($con,"insert into m_pos 
         (documentno, ranno, dateordered, bonmanual, description, trxtime, syncedbi, syncedadem, warehouse_id, cashier_id, customer_id, gro_id, guide_id, created_at, updated_at, created_by, updated_by)
         values 
         ('$documentno', '$ranno', '$dateordered', '$bonmanual', '$description', '$trxtime', '$syncedbi', '$syncedadem', '$warehouse_id', '$cashier_id', '$customer_id', '$gro_id', '$guide_id', '$created_at', '$updated_at', '$created_by', '$updated_by')");
@@ -90,10 +90,10 @@ foreach ($data['data'] as $item) {
         $created_by = $mposline['created_by'];
         $updated_by = $mposline['updated_by'];
 
-        $sqlsatu = mysqli_query($con,"insert into  m_posline 
-        (id, pos_id, product_id, qty, price, taxamt, discountamt, pricelist, trxtime, created_at, updated_at, created_by, updated_by) 
+        $sqlsatu = mysqli_query($con,"insert into m_posline 
+        (pos_id, product_id, qty, price, taxamt, discountamt, pricelist, trxtime, created_at, updated_at, created_by, updated_by) 
         values 
-        ('$id', '$pos_id', '$product_id', '$qty', '$price', '$taxamt', '$discountamt', '$pricelist', '$trxtime', '$created_at', '$updated_at', '$created_by', '$updated_by')");
+        ('$pos_id', '$product_id', '$qty', '$price', '$taxamt', '$discountamt', '$pricelist', '$trxtime', '$created_at', '$updated_at', '$created_by', '$updated_by')");
         $go=mysqli_query($con,$sqlsatu); 
        
 
@@ -122,10 +122,10 @@ foreach ($data['data'] as $item) {
               $updated_by = $komisi['updated_by'];
               
 
-              $sqlsatu = mysqli_query($con,"insert into  m_vpos_komisi 
-              (id, pos_id, posline_id, partner_id, totalamt, komisi, komisiamt, payment_id, created_at, updated_at, created_by, updated_by) 
+              $sqlsatu = mysqli_query($con,"insert into m_vpos_komisi 
+              (pos_id, posline_id, partner_id, totalamt, komisi, komisiamt, payment_id, created_at, updated_at, created_by, updated_by) 
               values 
-              ('$id', '$pos_id', '$posline_id', '$partner_id', '$totalamt', '$komisi', '$komisiamt', '$payment_id', '$created_at', '$updated_at', '$created_by', '$updated_by')");
+              ('$pos_id', '$posline_id', '$partner_id', '$totalamt', '$komisi', '$komisiamt', '$payment_id', '$created_at', '$updated_at', '$created_by', '$updated_by')");
               $go=mysqli_query($con,$sqlsatu); 
 
           }
@@ -142,10 +142,10 @@ foreach ($data['data'] as $item) {
             $created_by = $treatment['created_by'];
             $updated_by = $treatment['updated_by'];
 
-            $sqlsatu = mysqli_query($con,"insert into  m_vpos_treatment 
-            (id, pos_id, posline_id, terapis_id, room_id, created_at, updated_at, created_by, updated_by) 
+            $sqlsatu = mysqli_query($con,"insert into m_vpos_treatment 
+            (pos_id, posline_id, terapis_id, room_id, created_at, updated_at, created_by, updated_by) 
             values 
-            ('$id', '$pos_id', '$posline_id', '$terapis_id', '$room_id', '$created_at', '$updated_at', '$created_by', '$updated_by')");
+            ('$pos_id', '$posline_id', '$terapis_id', '$room_id', '$created_at', '$updated_at', '$created_by', '$updated_by')");
             $go=mysqli_query($con,$sqlsatu); 
 
 
@@ -168,10 +168,10 @@ foreach ($data['data'] as $item) {
 
 
 
-            $sqlsatu = mysqli_query($con,"insert into  m_vposline_promo 
-            (id, pos_id, posline_id, promo_id promoline_id, qty, discount discountamt, created_at, updated_at, created_by, updated_by) 
+            $sqlsatu = mysqli_query($con,"insert into m_vposline_promo 
+            (pos_id, posline_id, promo_id promoline_id, qty, discount discountamt, created_at, updated_at, created_by, updated_by) 
             values 
-            ('$id', '$pos_id', '$posline_id', '$promo_id', '$promoline_id', '$qty', '$discount', '$discountamt', '$created_at', '$updated_at', '$created_by', '$updated_by')");
+            ('$pos_id', '$posline_id', '$promo_id', '$promoline_id', '$qty', '$discount', '$discountamt', '$created_at', '$updated_at', '$created_by', '$updated_by')");
             $go=mysqli_query($con,$sqlsatu); 
 
             
