@@ -43,7 +43,8 @@ foreach ($data['data'] as $item) {
        $lastPosId = mysqli_insert_id($con); 
     }else{
       
-        echo "m_pos gagal";  
+        echo "m_pos gagal";
+         echo "Error: " . mysqli_error($con);  
     }
 
     // Access data_m_vpospayment
@@ -79,7 +80,8 @@ foreach ($data['data'] as $item) {
            $lastPosId = mysqli_insert_id($con); 
         }else{
           
-            echo "m_vpospayment gagal";  
+            echo "m_vpospayment gagal";
+             echo "Error: " . mysqli_error($con);  
         }
 
     }
@@ -113,7 +115,8 @@ foreach ($data['data'] as $item) {
            $lastPosLineId = mysqli_insert_id($con); 
         }else{
           
-            echo "m_posline gagal";  
+            echo "m_posline gagal";
+             echo "Error: " . mysqli_error($con);  
         }
 
         // Access m_vpos_komisi
@@ -145,7 +148,8 @@ foreach ($data['data'] as $item) {
                $lastPosLineId = mysqli_insert_id($con); 
             }else{
               
-                echo "m_vpos_komisi gagal";  
+                echo "m_vpos_komisi gagal";
+                 echo "Error: " . mysqli_error($con);  
             }
 
 
@@ -173,7 +177,8 @@ foreach ($data['data'] as $item) {
                 echo "Record inserted successfully yang m_psnya.<br>";
                $lastPosLineId = mysqli_insert_id($con); 
             }else{              
-                echo "m_vpos_treatment gagal";  
+                echo "m_vpos_treatment gagal";
+                 echo "Error: " . mysqli_error($con);  
             }
 
            }
@@ -207,7 +212,8 @@ foreach ($data['data'] as $item) {
                 echo "Record inserted successfully yang m_psnya.<br>";
                $lastPosLineId = mysqli_insert_id($con); 
             }else{              
-                echo "m_vposline_promo gagal";  
+                echo "m_vposline_promo gagal";
+                 echo "Error: " . mysqli_error($con);  
             }
             }
     }
