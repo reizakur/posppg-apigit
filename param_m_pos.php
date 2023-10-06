@@ -49,8 +49,6 @@ foreach ($data['data'] as $item) {
 
     // Access data_m_vpospayment
     foreach ($item['data_m_vpospayment'] as $payment) {
-        $paymentId = $payment['id'];
-        $invoicedAmt = $payment['invoicedamt'];
         $id = $payment['id'];
         $pos_id = $lastPosId;
         $invoicedamt = $payment['invoicedamt'];
@@ -68,9 +66,9 @@ foreach ($data['data'] as $item) {
         $updated_by = $payment['updated_by'];
 
         $sqlsatu = mysqli_query($con,"insert into m_vpospayment 
-        (invoicedAmt, id, pos_id, invoicedamt, payamt, changeamt, ptype, edc_id, card_id, cardnumber, cardname, trxtime, created_at, updated_at, created_by, updated_by)
+        (id, pos_id, invoicedamt, payamt, changeamt, ptype, edc_id, card_id, cardnumber, cardname, trxtime, created_at, updated_at, created_by, updated_by)
         values 
-        ('$invoicedAmt', '$id', '$pos_id', '$invoicedamt', '$payamt', '$changeamt', '$ptype', '$edc_id', '$card_id', '$cardnumber', '$cardname', '$trxtime', '$created_at', '$updated_at', '$created_by', '$updated_by')");
+        ('$id', '$pos_id', '$invoicedamt', '$payamt', '$changeamt', '$ptype', '$edc_id', '$card_id', '$cardnumber', '$cardname', '$trxtime', '$created_at', '$updated_at', '$created_by', '$updated_by')");
         $go=mysqli_query($con,$sqlsatu); 
         // ... access other fields in data_m_vpospayment ...
 
