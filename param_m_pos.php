@@ -199,7 +199,7 @@ foreach ($data['data'] as $item) {
 
 
             $sqlsatu = mysqli_query($con,"insert into m_vposline_promo 
-            (pos_id, posline_id, promo_id promoline_id, qty, discount, discountamt, created_at, updated_at, created_by, updated_by) 
+            (pos_id, posline_id, promo_id, promoline_id, qty, discount, discountamt, created_at, updated_at, created_by, updated_by) 
             values 
             ('$pos_id', '$posline_id', '$promo_id', '$promoline_id', '$qty', '$discount', '$discountamt', '$created_at', '$updated_at', '$created_by', '$updated_by')");
             $go=mysqli_query($con,$sqlsatu); 
