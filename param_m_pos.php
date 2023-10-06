@@ -68,9 +68,9 @@ foreach ($data['data'] as $item) {
         $updated_by = $payment['updated_by'];
 
         $sqlsatu = mysqli_query($con,"insert into m_vpospayment 
-        (paymentId, invoicedAmt, id, pos_id, invoicedamt, payamt, changeamt, ptype, edc_id, card_id, cardnumber, cardname, trxtime, created_at, updated_at, created_by, updated_by)
+        (invoicedAmt, id, pos_id, invoicedamt, payamt, changeamt, ptype, edc_id, card_id, cardnumber, cardname, trxtime, created_at, updated_at, created_by, updated_by)
         values 
-        ('$paymentId', '$invoicedAmt', '$id', '$pos_id', '$invoicedamt', '$payamt', '$changeamt', '$ptype', '$edc_id', '$card_id', '$cardnumber', '$cardname', '$trxtime', '$created_at', '$updated_at', '$created_by', '$updated_by')");
+        ('$invoicedAmt', '$id', '$pos_id', '$invoicedamt', '$payamt', '$changeamt', '$ptype', '$edc_id', '$card_id', '$cardnumber', '$cardname', '$trxtime', '$created_at', '$updated_at', '$created_by', '$updated_by')");
         $go=mysqli_query($con,$sqlsatu); 
         // ... access other fields in data_m_vpospayment ...
 
@@ -201,7 +201,7 @@ foreach ($data['data'] as $item) {
 
 
             $sqlsatu = mysqli_query($con,"insert into m_vposline_promo 
-            (pos_id, posline_id, promo_id promoline_id, qty, discount discountamt, created_at, updated_at, created_by, updated_by) 
+            (pos_id, posline_id, promo_id promoline_id, qty, discount, discountamt, created_at, updated_at, created_by, updated_by) 
             values 
             ('$pos_id', '$posline_id', '$promo_id', '$promoline_id', '$qty', '$discount', '$discountamt', '$created_at', '$updated_at', '$created_by', '$updated_by')");
             $go=mysqli_query($con,$sqlsatu); 
