@@ -38,12 +38,12 @@ foreach ($data['data'] as $item) {
         $go=mysqli_query($con,$sqlsatu); 
  
     if($sqlsatu){
-        echo "fellas berhasil";
+        echo "m_pos berhasil";
          echo "Record inserted successfully yang m_psnya.<br>";
        $lastPosId = mysqli_insert_id($con); 
     }else{
       
-        echo "fellas gagal";  
+        echo "m_pos gagal";  
     }
 
     // Access data_m_vpospayment
@@ -72,6 +72,16 @@ foreach ($data['data'] as $item) {
         ('$paymentId', '$invoicedAmt', '$id', '$pos_id', '$invoicedamt', '$payamt', '$changeamt', '$ptype', '$edc_id', '$card_id', '$cardnumber', '$cardname', '$trxtime', '$created_at', '$updated_at', '$created_by', '$updated_by')");
         $go=mysqli_query($con,$sqlsatu); 
         // ... access other fields in data_m_vpospayment ...
+
+        if($sqlsatu){
+            echo "m_vpospayment berhasil";
+             echo "Record inserted successfully yang m_psnya.<br>";
+           $lastPosId = mysqli_insert_id($con); 
+        }else{
+          
+            echo "m_vpospayment gagal";  
+        }
+
     }
 
     // Access data_mposline
@@ -98,12 +108,12 @@ foreach ($data['data'] as $item) {
        
 
         if($sqlsatu){
-            echo "fellas berhasil";
+            echo "m_posline berhasil";
              echo "Record inserted successfully yang m_psnya.<br>";
            $lastPosLineId = mysqli_insert_id($con); 
         }else{
           
-            echo "fellas gagal";  
+            echo "m_posline gagal";  
         }
 
         // Access m_vpos_komisi
@@ -128,6 +138,17 @@ foreach ($data['data'] as $item) {
               ('$pos_id', '$posline_id', '$partner_id', '$totalamt', '$komisi', '$komisiamt', '$payment_id', '$created_at', '$updated_at', '$created_by', '$updated_by')");
               $go=mysqli_query($con,$sqlsatu); 
 
+
+              if($sqlsatu){
+                echo "m_vpos_komisi berhasil";
+                 echo "Record inserted successfully yang m_psnya.<br>";
+               $lastPosLineId = mysqli_insert_id($con); 
+            }else{
+              
+                echo "m_vpos_komisi gagal";  
+            }
+
+
           }
 
         // Access m_vpos_treatment
@@ -147,7 +168,13 @@ foreach ($data['data'] as $item) {
             values 
             ('$pos_id', '$posline_id', '$terapis_id', '$room_id', '$created_at', '$updated_at', '$created_by', '$updated_by')");
             $go=mysqli_query($con,$sqlsatu); 
-
+            if($sqlsatu){
+                echo "m_vpos_treatment berhasil";
+                echo "Record inserted successfully yang m_psnya.<br>";
+               $lastPosLineId = mysqli_insert_id($con); 
+            }else{              
+                echo "m_vpos_treatment gagal";  
+            }
 
            }
 
@@ -174,7 +201,14 @@ foreach ($data['data'] as $item) {
             ('$pos_id', '$posline_id', '$promo_id', '$promoline_id', '$qty', '$discount', '$discountamt', '$created_at', '$updated_at', '$created_by', '$updated_by')");
             $go=mysqli_query($con,$sqlsatu); 
 
-            
+           
+            if($sqlsatu){
+                echo "m_vposline_promo berhasil";
+                echo "Record inserted successfully yang m_psnya.<br>";
+               $lastPosLineId = mysqli_insert_id($con); 
+            }else{              
+                echo "m_vposline_promo gagal";  
+            }
             }
     }
 }
