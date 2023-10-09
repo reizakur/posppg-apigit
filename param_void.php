@@ -90,8 +90,7 @@ foreach ($data['data'] as $item) {
         $qty = $mposline['qty'];
         $price = $mposline['price'];
         $taxamt = $mposline['taxamt'];
-        $discountamt = $mposline['discountamt'];
-        $pricelist = $mposline['pricelist'];
+        $discountamt = $mposline['discountamt']; 
         $trxtime = $mposline['trxtime'];
         $created_at = $mposline['created_at'];
         $updated_at = $mposline['updated_at'];
@@ -99,9 +98,9 @@ foreach ($data['data'] as $item) {
         $updated_by = $mposline['updated_by'];
 
         $sqlsatu = mysqli_query($con,"insert into m_vposline 
-        (pos_id, product_id, qty, price, taxamt, discountamt, pricelist, trxtime, created_at, updated_at, created_by, updated_by) 
+        (pos_id, product_id, qty, price, taxamt, discountamt, trxtime, created_at, updated_at, created_by, updated_by) 
         values 
-        ('$pos_id', '$product_id', '$qty', '$price', '$taxamt', '$discountamt', '$pricelist', '$trxtime', '$created_at', '$updated_at', '$created_by', '$updated_by')");
+        ('$pos_id', '$product_id', '$qty', '$price', '$taxamt', '$discountamt', '$trxtime', '$created_at', '$updated_at', '$created_by', '$updated_by')");
         $go=mysqli_query($con,$sqlsatu); 
        
 
