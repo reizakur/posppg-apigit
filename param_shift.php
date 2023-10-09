@@ -34,13 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 ('$warehouse_id', '$cashier_id', '$shift_id', '$shiftin', '$shiftout', '$amtmodal', '$amtsetor', '$amtshift', '$created_at', '$updated_at', '$created_by', '$updated_by')";
 
                 $resultShiftLog = mysqli_query($con, $sqlShiftLog);
-
-                if ($resultShiftLog) {
-                    $shiftlog_id = mysqli_insert_id($con);
-                    echo "m_shiftlog berhasil\n";
-                } else {
-                    echo "m_shiftlog gagal: " . mysqli_error($con) . "\n";
-                }
+ 
 
                 // Loop through the 'datamshiftbonmanual' array
                 foreach ($item['datamshiftbonmanual'] as $shiftBonManual) {
