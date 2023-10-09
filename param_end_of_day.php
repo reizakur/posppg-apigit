@@ -11,13 +11,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   
   $jsonData = $_POST['dataendofday'];
   
+
   echo("hmmmmm123");
   $data = json_decode($jsonData, true);
   
-  echo("hmmmmm321"); 
+  if ($data !== null) {
+    echo("kemana sii");
+    // Access the data as needed
+    foreach ($data['data'] as $item) {
+        $id = $item['id'];
+        $warehouseId = $item['warehouse_id'];
+        $cashierId = $item['cashier_id']; 
+    }
+  
+} else {
+    // JSON decoding failed
+    echo "JSON decoding error";
+}
+
+  echo("hmmmmm321");
+  echo($data);
 
 foreach($data as $item){
 
+$id = $jsonData['id'];
 $warehouse_id = $jsonData['warehouse_id'];
 $cashier_id = $jsonData['cashier_id'];
 $datetrx = $jsonData['datetrx'];
