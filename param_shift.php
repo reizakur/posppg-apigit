@@ -51,7 +51,7 @@ foreach ($data as $item) {
          echo "Error: " . mysqli_error($con);  
     }
     echo('ayam 234'); 
-    echo($item['datamshiftbonmanual']);
+    echo($item['datamshiftbonmanual']['modal1']);
     foreach ($item['datamshiftbonmanual'] as $shiftBonManual) {
         echo('kucing 111'); 
         $id = $shiftBonManual['id'];
