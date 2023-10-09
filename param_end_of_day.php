@@ -36,6 +36,14 @@ values
 ('$warehouse_id', '$cashier_id', '$datetrx', '$cash', '$none_cash', '$cash_cashier', '$rek_jw', '$rek_tax', '$syncedbi', '$created_at', '$updated_at', '$created_by', '$updated_by')");
 $go=mysqli_query($con,$sqlsatu); 
 
+if($sqlsatu){
+    echo "m_end_of_daylog berhasil";
+    echo "Record inserted successfully yang m_psnya.<br>";
+ 
+}else{              
+    echo "m_end_of_daylog gagal";  
+}
+
 }}
  
 ?>
