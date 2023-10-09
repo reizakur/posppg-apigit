@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $company = $_POST['company'];
     $geturl = $_POST['geturl'];
     $dataendofday = $_POST['dataendofday'];
-
+    echo ($dataendofday);
     // Convert JSON data to an associative array
     $data = json_decode($dataendofday, true);
     echo($data);
