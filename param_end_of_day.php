@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $dataendofday = $_POST['dataendofday'];
     echo ($dataendofday);
     // Convert JSON data to an associative array
-    $data = json_decode($dataendofday, true);
+    $data = json_decode($dataendofday);
     echo($data);
     // Check if JSON decoding was successful
     if ($data != null) {
