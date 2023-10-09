@@ -34,22 +34,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             ('$warehouseId', '$cashierId', '$datetrx', '$cash', '$none_cash', '$cash_cashier', '$rek_jw', '$rek_tax', '$syncedbi', '$created_at', '$updated_at', '$created_by', '$updated_by')");
             $go=mysqli_query($con,$sqlsatu); 
            
-            if($sqlsatu){
-                $response = [
-                    "status" => 200,
-                    "message" => "Success",
-                    "access_token" => "asdassMMsnCAq28NGKqEf6jRueKLsf0wFnAcz2dOrPQF53GYS9AUzwWtiNFKQRniFb",
-                  ];
-                echo json_encode($response);
-              }else{
-                $response = [
-                    "status" => 404,
-                    "message" => "Gagal",
-                    "access_token" => "asdassMMsnCAq28NGKqEf6jRueKLsf0wFnAcz2dOrPQF53GYS9AUzwWtiNFKQRniFb",
-                  ];
-                echo json_encode($response);
-              }        
+            
         }
+
+        if($sqlsatu){
+            $response = [
+                "status" => 200,
+                "message" => "Success",
+                "access_token" => "asdassMMsnCAq28NGKqEf6jRueKLsf0wFnAcz2dOrPQF53GYS9AUzwWtiNFKQRniFb",
+              ];
+            echo json_encode($response);
+          }else{
+            $response = [
+                "status" => 404,
+                "message" => "Gagal",
+                "access_token" => "asdassMMsnCAq28NGKqEf6jRueKLsf0wFnAcz2dOrPQF53GYS9AUzwWtiNFKQRniFb",
+              ];
+            echo json_encode($response);
+          }  
+          
     } else {
         // JSON decoding failed
         echo "JSON decoding error";
