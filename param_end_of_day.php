@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Convert JSON data to an associative array
     $data = json_decode($dataendofday, true);
-
+    echo($data);
     // Check if JSON decoding was successful
     if ($data !== null) {
         // Loop through the data
