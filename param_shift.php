@@ -50,8 +50,9 @@ foreach ($data as $item) {
         echo "m_shiftlog gagal";
          echo "Error: " . mysqli_error($con);  
     }
-    
+    echo('ayam 234'); 
     foreach ($item['datamshiftbonmanual'] as $shiftBonManual) {
+        echo('kucing 111'); 
         $id = $shiftBonManual['id'];
         $shiftlog_id = $shiftlog_id;
         $modal1 = $shiftBonManual['modal1'];
@@ -69,11 +70,11 @@ foreach ($data as $item) {
         ('$shiftlog_id', '$modal1', '$modal2', '$sisa1', '$sisa2', '$created_at', '$updated_at', '$created_by')");
         $go=mysqli_query($con,$sqlsatu); 
         if($sqlsatu){
-            echo "m_vpos_treatment berhasil";
+            echo "m_shift_bon_manual berhasil";
             echo "Record inserted successfully yang m_psnya.<br>";
            $lastPosLineId = mysqli_insert_id($con); 
         }else{              
-            echo "m_vpos_treatment gagal";
+            echo "m_shift_bon_manual gagal";
              echo "Error: " . mysqli_error($con);  
         }
 
