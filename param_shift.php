@@ -12,23 +12,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 $data = json_decode($jsonData, true);
 echo('kucing 234');
 echo($data);
-foreach ($data as $item) {
-    $id = $item['id'];
-    $warehouse_id = $item['warehouse_id'];
-    $name = $item['name'];
-    $shiftin = $item['shiftin'];
-    $shiftout = $item['shiftout'];
-    $active = $item['active'];
-    $created_at = $item['created_at'];
-    $updated_at = $item['updated_at'];
-    $created_by = $item['created_by'];
-    $updated_by = $item['updated_by'];   
+foreach ($data as $item) { 
+    echo('kambing 234');
+    $id =  $item['id'];
+    $warehouse_id =  $item['warehouse_id'];
+    $cashier_id =  $item['cashier_id'];
+    $shift_id =  $item['shift_id'];
+    $shiftin =  $item['shiftin'];
+    $shiftout =  $item['shiftout'];
+    $amtmodal =  $item['amtmodal'];
+    $amtsetor =  $item['amtsetor'];
+    $amtshift =  $item['amtshift'];
+    $created_at =  $item['created_at'];
+    $updated_at =  $item['updated_at'];
+    $created_by =  $item['created_by'];
+    $updated_by =  $item['updated_by'];   
     
     
     $sqlsatu = mysqli_query($con,"insert into m_shiftlog 
-    (id, warehouse_id, name, shiftin, shiftout, active, created_at, updated_at, created_by) 
+    (warehouse_id, cashier_id, shift_id, shiftin, shiftout, amtmodal, amtsetor, amtshift, created_at, updated_at, created_by, updated_by, ) 
     values 
-    ('$id','$warehouse_id', '$name', '$shiftin', '$shiftout', '$active', '$created_at', '$updated_at', '$created_by')");
+    ('$warehouse_id', '$cashier_id', '$shift_id', '$shiftin', '$shiftout', '$amtmodal', '$amtsetor', '$amtshift', '$created_at', '$updated_at', '$created_by', '$updated_by')");
     
     $go=mysqli_query($con,$sqlsatu); 
     if($sqlsatu){
