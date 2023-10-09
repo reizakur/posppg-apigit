@@ -5,12 +5,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $company = $_POST['company']; 
     $geturl = $_POST['geturl']; 
     $dataendofday = $_POST['dataendofday'];
-    echo($company);
+    // echo($company);
     echo($dataendofday);
         echo("hmmmmm");
   
   $jsonData = $_POST['dataendofday'];
+  
+  echo("hmmmmm123");
   $data = json_decode($jsonData, true);
+  
+  echo("hmmmmm321");
   echo($data);
 
 foreach($data as $item){
