@@ -4,13 +4,15 @@ include ("koneksi.php");
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $company = $_POST['company']; 
     $geturl = $_POST['geturl']; 
-    $datampos = $_POST['datampos'];
+    $dataendofday = $_POST['dataendofday'];
     echo($datampos);
         echo("hmmmmm");
   
-  $jsonData = $_POST['datampos'];
+  $jsonData = $_POST['dataendofday'];
   $data = json_decode($jsonData, true);
   echo($data);
+
+foreach($data as $item){
 
 $id = $jsonData['id'];
 $warehouse_id = $jsonData['warehouse_id'];
@@ -27,12 +29,13 @@ $updated_at = $jsonData['updated_at'];
 $created_by = $jsonData['created_by'];
 $updated_by = $jsonData['updated_by'];
 
+
 $sqlsatu = mysqli_query($con,"insert into m_end_of_daylog 
-(id, warehouse_id, cashier_id, datetrx, cash, none_cash, cash_cashier, rek_jw, rek_tax, syncedbi, created_at, updated_at, created_by, updated_by)
+(warehouse_id, cashier_id, datetrx, cash, none_cash, cash_cashier, rek_jw, rek_tax, syncedbi, created_at, updated_at, created_by, updated_by)
 values 
-('$id', '$warehouse_id', '$cashier_id', '$datetrx', '$cash', '$none_cash', '$cash_cashier', '$rek_jw', '$rek_tax', '$syncedbi', '$created_at', '$updated_at', '$created_by', '$updated_by')");
+('$warehouse_id', '$cashier_id', '$datetrx', '$cash', '$none_cash', '$cash_cashier', '$rek_jw', '$rek_tax', '$syncedbi', '$created_at', '$updated_at', '$created_by', '$updated_by')");
 $go=mysqli_query($con,$sqlsatu); 
 
-   
-}
+}}
+ 
 ?>
