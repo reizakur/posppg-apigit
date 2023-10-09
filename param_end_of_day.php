@@ -5,7 +5,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Retrieve POST data
     $company = $_POST['company'];
     $geturl = $_POST['geturl'];
-    $dataendofday = $_POST['dataendofday'];
+    $dataendofday =  '{
+        "data": [
+            {
+                "id": "1",
+                "warehouse_id": "DOC001",
+                "cashier_id": "RAN001",
+                "datetrx": "2023-10-01",
+                "cash": "Manual123",
+                "none_cash": "Sample Description",
+                "cash_cashier": "2023-10-01 10:30:00",
+                "rek_jw": "Synced123",
+                "rek_tax": "Synced456",
+                "syncedbi": "123",
+                "created_at": "456",
+                "updated_at": "789",
+                "created_by": "101",
+                "updated_by": "111"
+            }
+        ]
+    }';
     echo ($dataendofday);
 
     echo ('mau lu apa si');
