@@ -60,21 +60,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     ('$shiftlog_id', '$modal1', '$modal2', '$sisa1', '$sisa2', '$created_at', '$updated_at', '$created_by', '$updated_by')";
 
                     $resultShiftBonManual = mysqli_query($con, $sqlShiftBonManual);
-
-                    if ($resultShiftBonManual) {
-                        echo "m_shift_bon_manual berhasil\n";
-                    } else {
-                        echo "m_shift_bon_manual gagal: " . mysqli_error($con) . "\n";
-                    }
+ 
                 }
             }
+            $response = [
+                "status" => 200,
+                "message" => "Success", 
+            ];
+            echo json_encode($response);
         } else {
-            // JSON decoding failed
-            echo "JSON decoding error\n";
+            $response = [
+                "status" => 405,
+                "message" => "Gagal", 
+            ];
+            echo json_encode($response);
         }
     } else {
-        // JSON data is empty
-        echo "JSON data is empty\n";
+        $response = [
+            "status" => 405,
+            "message" => "Internet Bermaslah", 
+        ];
+        echo json_encode($response);
     }
 }
 ?>
