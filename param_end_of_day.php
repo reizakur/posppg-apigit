@@ -4,35 +4,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Retrieve POST data
     $company = $_POST['company'];
     $geturl = $_POST['geturl'];
-    $dataendofday =  '{
-        "data": [
-            {
-                "id": "1",
-                "warehouse_id": "DOC001",
-                "cashier_id": "RAN001",
-                "datetrx": "2023-10-01",
-                "cash": "Manual123",
-                "none_cash": "Sample Description",
-                "cash_cashier": "2023-10-01 10:30:00",
-                "rek_jw": "Synced123",
-                "rek_tax": "Synced456",
-                "syncedbi": "123",
-                "created_at": "456",
-                "updated_at": "789",
-                "created_by": "101",
-                "updated_by": "111"
-            }
-        ]
-    }';
+    $dataendofday =  $_POST['dataendofday'];
     echo ($dataendofday);
 
-    echo ('mau lu apa si');
+    echo ('proses aja');
     // Convert JSON data to an associative array
     $data = json_decode($_POST['dataendofday'],true);
     echo($data);
     // Check if JSON decoding was successful
     if ($data != null) {
-
+echo('bener kok');
         // Loop through the data
         foreach ($data['data'] as $item) {
             $id = $item['id'];
