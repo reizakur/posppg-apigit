@@ -9,13 +9,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo($dataendofday);
         echo("hmmmmm");
   
-  $jsonData = $_POST['dataendofday'];
+  $jsonData = $dataendofday;
   
 
   echo("hmmmmm123");
   $data = json_decode($jsonData, true);
   
-  if ($data !== null) {
+  if ($data != null) {
     echo("kemana sii");
     // Access the data as needed
     foreach ($data['data'] as $item) {
