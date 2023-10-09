@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   
   $jsonData = $dataendofday;
   
-
+  var_dump($jsonData);
   echo("hmmmmm123");
   $data = json_decode($jsonData, true);
   
