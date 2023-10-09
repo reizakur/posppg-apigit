@@ -1,6 +1,5 @@
 <?php
-// Include your database connection code (koneksi.php) here
-
+include ("koneksi.php");
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Retrieve POST data
     $company = $_POST['company'];
@@ -33,6 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo($data);
     // Check if JSON decoding was successful
     if ($data != null) {
+
         // Loop through the data
         foreach ($data['data'] as $item) {
             $id = $item['id'];
@@ -50,13 +50,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $created_by = $item['created_by'];
             $updated_by = $item['updated_by'];
 
+            $sqlsatu = mysqli_query($con,"insert into m_end_of_daylog 
+            (warehouse_id, cashier_id, datetrx, cash, none_cash, cash_cashier, rek_jw, rek_tax, syncedbi, created_at, updated_at, created_by, updated_by)
+            values 
+            ($warehouseId', '$cashierId', '$datetrx', '$cash', '$none_cash', '$cash_cashier', '$rek_jw', '$rek_tax', '$syncedbi', '$created_at', '$updated_at', '$created_by', '$updated_by')");
+            $go=mysqli_query($con,$sqlsatu); 
+ 
+            if($sqlsatu){
+                echo "m_pos berhasil";
+              }else{
+              
+                echo "m_pos gagal";
+                 echo "Error: " . mysqli_error($con);  
+            }
             // Perform database insertions here for each record
             // Example code for inserting into m_end_of_daylog table
-            $sql = "INSERT INTO m_end_of_daylog (warehouse_id, cashier_id, datetrx, cash, none_cash, cash_cashier, rek_jw, rek_tax, syncedbi, created_at, updated_at, created_by, updated_by) 
-                    VALUES ('$warehouseId', '$cashierId', '$datetrx', '$cash', '$none_cash', '$cash_cashier', '$rek_jw', '$rek_tax', '$syncedbi', '$created_at', '$updated_at', '$created_by', '$updated_by')";
-            
-            $result = mysqli_query($con, $sql);
-
+           
             if ($result) {
                 echo "Record inserted successfully into m_end_of_daylog table.<br>";
             } else {
