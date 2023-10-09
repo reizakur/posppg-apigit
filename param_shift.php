@@ -10,8 +10,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $jsonData = $_POST['datashift'];
 
 $data = json_decode($jsonData, true);
-echo('kucing 234');
-echo($data);
+echo('kucing 234'); 
+if ($data != null) {
+    // Access the decoded data here
+    print_r($data);
+} else {
+    // JSON decoding failed
+    echo "JSON decoding error";
+}
 foreach ($data as $item) { 
     echo('kambing 234');
     $id =  $item['id'];
@@ -36,11 +42,11 @@ foreach ($data as $item) {
     
     $go=mysqli_query($con,$sqlsatu); 
     if($sqlsatu){
-        echo "m_vpos_treatment berhasil";
+        echo "m_shiftlog berhasil";
         echo "Record inserted successfully yang m_psnya.<br>";
        $shiftlog_id = mysqli_insert_id($con); 
     }else{              
-        echo "m_vpos_treatment gagal";
+        echo "m_shiftlog gagal";
          echo "Error: " . mysqli_error($con);  
     }
     
