@@ -14,6 +14,7 @@ echo('kucing 234');
 if ($data != null) {
     // Access the decoded data here
     print_r($data);
+    echo('wakawa 777');
 } else {
     // JSON decoding failed
     echo "JSON decoding error";
