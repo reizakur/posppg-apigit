@@ -3,13 +3,14 @@ include ("koneksi.php");
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $company = $_POST['company']; 
     $geturl = $_POST['geturl']; 
-    $datampos = $_POST['datampos'];
-    echo($datampos);
-        echo("hmmmmm");
+    $datashift = $_POST['datashift'];
+    echo($datashift);
+        echo("hmmmmm 3242");
   
-  $jsonData = $_POST['datampos'];
+  $jsonData = $_POST['datashift'];
 
 $data = json_decode($jsonData, true);
+echo('kucing 234');
 echo($data);
 foreach ($data as $item) {
     $id = $item['id'];
