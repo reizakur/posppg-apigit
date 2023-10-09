@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $data = json_decode($dataendofday, true);
     echo($data);
     // Check if JSON decoding was successful
-    if ($data !== null) {
+    if ($data != null) {
         // Loop through the data
         foreach ($data['data'] as $item) {
             $id = $item['id'];
