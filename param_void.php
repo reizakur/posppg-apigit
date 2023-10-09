@@ -4,10 +4,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $company = $_POST['company']; 
     $geturl = $_POST['geturl']; 
     $datamvoid = $_POST['datamvoid'];
-    echo($datampos);
+    echo($datamvoid);
         echo("hmmmmm");
   
-  $jsonData = $_POST['datampos'];
+  $jsonData = $_POST['datamvoid'];
   echo("oaja yakan");
 $data = json_decode($jsonData, true);
 echo($data);
