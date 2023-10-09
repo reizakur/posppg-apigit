@@ -11,7 +11,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   
   $jsonData = $dataendofday;
   
-  var_dump($jsonData);
   echo("hmmmmm123");
   $data = json_decode($jsonData, true);
   
@@ -32,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   echo("hmmmmm321");
   echo($data);
 
-foreach($data as $item){
+foreach($data as $jsonData){
 
 $id = $jsonData['id'];
 $warehouse_id = $jsonData['warehouse_id'];
