@@ -52,6 +52,8 @@ foreach ($data as $item) {
     }
     echo('ayam 234'); 
     echo($item['datamshiftbonmanual']['modal1']);
+    echo('ontaaaaaa 234'); 
+    
     foreach ($item['datamshiftbonmanual'] as $shiftBonManual) {
         echo('kucing 111'); 
         $id = $shiftBonManual['id'];
