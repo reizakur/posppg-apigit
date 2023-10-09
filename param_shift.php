@@ -37,7 +37,7 @@ foreach ($data as $item) {
     
     
     $sqlsatu = mysqli_query($con,"insert into m_shiftlog 
-    (warehouse_id, cashier_id, shift_id, shiftin, shiftout, amtmodal, amtsetor, amtshift, created_at, updated_at, created_by, updated_by, ) 
+    (warehouse_id, cashier_id, shift_id, shiftin, shiftout, amtmodal, amtsetor, amtshift, created_at, updated_at, created_by, updated_by ) 
     values 
     ('$warehouse_id', '$cashier_id', '$shift_id', '$shiftin', '$shiftout', '$amtmodal', '$amtsetor', '$amtshift', '$created_at', '$updated_at', '$created_by', '$updated_by')");
     
