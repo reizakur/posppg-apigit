@@ -51,7 +51,7 @@ foreach ($data as $item) {
          echo "Error: " . mysqli_error($con);  
     }
     
-    foreach ($item['data_m_shift_bon_manual'] as $shiftBonManual) {
+    foreach ($item['datamshiftbonmanual'] as $shiftBonManual) {
         $id = $shiftBonManual['id'];
         $shiftlog_id = $shiftlog_id;
         $modal1 = $shiftBonManual['modal1'];
