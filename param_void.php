@@ -15,8 +15,6 @@ foreach ($data['data'] as $item) {
         $id = $item['id'];
         $documentno = $item['documentno'];
         $ranno = $item['ranno'];
-        $syncedbi = $item['syncedbi'];
-        $syncedadem = $item['syncedadem'];
         $dateordered = $item['dateordered'];
         $bonmanual = $item['bonmanual'];
         $description = $item['description'];
@@ -32,9 +30,9 @@ foreach ($data['data'] as $item) {
         $updated_by = $item['updated_by'];
          
         $sqlsatu = mysqli_query($con,"insert into m_vpos 
-        (documentno, ranno, dateordered, bonmanual, description, trxtime, syncedbi, syncedadem, warehouse_id, cashier_id, customer_id, gro_id, guide_id, created_at, updated_at, created_by, updated_by)
+        (documentno, ranno, dateordered, bonmanual, description, trxtime, warehouse_id, cashier_id, customer_id, gro_id, guide_id, created_at, updated_at, created_by, updated_by)
         values 
-        ('$documentno', '$ranno', '$dateordered', '$bonmanual', '$description', '$trxtime', '$syncedbi', '$syncedadem', '$warehouse_id', '$cashier_id', '$customer_id', '$gro_id', '$guide_id', '$created_at', '$updated_at', '$created_by', '$updated_by')");
+        ('$documentno', '$ranno', '$dateordered', '$bonmanual', '$description', '$trxtime', '$warehouse_id', '$cashier_id', '$customer_id', '$gro_id', '$guide_id', '$created_at', '$updated_at', '$created_by', '$updated_by')");
         $go=mysqli_query($con,$sqlsatu); 
  
     if($sqlsatu){
