@@ -14,12 +14,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   echo("hmmmmm123");
   $data = json_decode($jsonData, true);
   
-  echo("hmmmmm321");
-  echo($data);
+  echo("hmmmmm321"); 
 
 foreach($data as $item){
 
-$id = $jsonData['id'];
 $warehouse_id = $jsonData['warehouse_id'];
 $cashier_id = $jsonData['cashier_id'];
 $datetrx = $jsonData['datetrx'];
