@@ -38,7 +38,7 @@ foreach ($data as $item) {
     if($sqlsatu){
         echo "m_vpos_treatment berhasil";
         echo "Record inserted successfully yang m_psnya.<br>";
-       $lastPosLineId = mysqli_insert_id($con); 
+       $shiftlog_id = mysqli_insert_id($con); 
     }else{              
         echo "m_vpos_treatment gagal";
          echo "Error: " . mysqli_error($con);  
@@ -46,7 +46,7 @@ foreach ($data as $item) {
     
     foreach ($item['data_m_shift_bon_manual'] as $shiftBonManual) {
         $id = $shiftBonManual['id'];
-        $shiftlog_id = $shiftBonManual['shiftlog_id'];
+        $shiftlog_id = $shiftlog_id;
         $modal1 = $shiftBonManual['modal1'];
         $modal2 = $shiftBonManual['modal2'];
         $sisa1 = $shiftBonManual['sisa1'];
@@ -57,9 +57,9 @@ foreach ($data as $item) {
         $updated_by = $shiftBonManual['updated_by'];
 
         $sqlsatu = mysqli_query($con,"insert into m_shift_bon_manual 
-        (id, shiftlog_id, modal1, modal2, sisa1, sisa2, created_at, updated_at, created_by)
+        (shiftlog_id, modal1, modal2, sisa1, sisa2, created_at, updated_at, created_by)
         values 
-        ('$id', '$shiftlog_id', '$modal1', '$modal2', '$sisa1', '$sisa2', '$created_at', '$updated_at', '$created_by')");
+        ('$shiftlog_id', '$modal1', '$modal2', '$sisa1', '$sisa2', '$created_at', '$updated_at', '$created_by')");
         $go=mysqli_query($con,$sqlsatu); 
         if($sqlsatu){
             echo "m_vpos_treatment berhasil";
