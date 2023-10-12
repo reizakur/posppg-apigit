@@ -375,8 +375,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ]
         ]
     ];
-}esle{
-
 }
     header('Content-Type: application/json');
     echo json_encode($response);
