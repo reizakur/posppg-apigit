@@ -217,7 +217,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 "bom" => "N",
                 "active" => "Y",
                 "harian" => "Y",
-                "mingguan" => "Y",
+                "mingguan" => "N",
                 "bulanan" => "N",
                 "konsinyasi" => "N"
             ],
@@ -234,8 +234,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 "bom" => "N",
                 "active" => "Y",
                 "harian" => "Y",
-                "mingguan" => "Y",
-                "bulanan" => "Y",
+                "mingguan" => "N",
+                "bulanan" => "N",
                 "konsinyasi" => "N"
             ],           
         ]
@@ -259,7 +259,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 "bom" => "N",
                 "active" => "Y",
                 "harian" => "N",
-                "mingguan" => "N",
+                "mingguan" => "Y",
                 "bulanan" => "N",
                 "konsinyasi" => "N"
             ],
@@ -275,8 +275,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 "sold" => "Y",
                 "bom" => "N",
                 "active" => "Y",
-                "harian" => "Y",
-                "mingguan" => "N",
+                "harian" => "N",
+                "mingguan" => "Y",
                 "bulanan" => "N",
                 "konsinyasi" => "N"
             ],
@@ -292,9 +292,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 "sold" => "Y",
                 "bom" => "N",
                 "active" => "Y",
-                "harian" => "Y",
+                "harian" => "N",
                 "mingguan" => "Y",
-                "bulanan" => "Y",
+                "bulanan" => "N",
                 "konsinyasi" => "N"
             ],         
         ]
@@ -317,9 +317,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 "sold" => "Y",
                 "bom" => "N",
                 "active" => "Y",
-                "harian" => "Y",
+                "harian" => "N",
                 "mingguan" => "N",
-                "bulanan" => "N",
+                "bulanan" => "Y",
                 "konsinyasi" => "N"
             ],
             [
@@ -334,9 +334,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 "sold" => "Y",
                 "bom" => "N",
                 "active" => "Y",
-                "harian" => "Y",
-                "mingguan" => "Y",
-                "bulanan" => "N",
+                "harian" => "N",
+                "mingguan" => "N",
+                "bulanan" => "Y",
                 "konsinyasi" => "N"
             ],
             [
@@ -351,8 +351,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 "sold" => "Y",
                 "bom" => "N",
                 "active" => "Y",
-                "harian" => "Y",
-                "mingguan" => "Y",
+                "harian" => "N",
+                "mingguan" => "N",
                 "bulanan" => "Y",
                 "konsinyasi" => "N"
             ],
@@ -368,9 +368,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 "sold" => "Y",
                 "bom" => "N",
                 "active" => "Y",
-                "harian" => "Y",
+                "harian" => "N",
                 "mingguan" => "N",
-                "bulanan" => "N",
+                "bulanan" => "Y",
                 "konsinyasi" => "N"
             ]
         ]
