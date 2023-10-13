@@ -83,19 +83,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 
-
-
-
-
-
-
-id
-product_id
-qty
-uom_id
-trxtime
-inventory_id
-created_at
-updated_at
-created_by
-updated_by
+ 
