@@ -127,6 +127,8 @@ if($id_warehouse = "1500434P"){
       echo("damn cccc");
       echo json_encode($response);
     }else{
+        echo("damn ooooo");
+    
         $response = [
             "status" => 404,
             "message" => "Gagal",
@@ -135,7 +137,8 @@ if($id_warehouse = "1500434P"){
             echo json_encode($response);
     } 
  
-  
+    echo("damn pppp");
+     
 }
 
     ?>
