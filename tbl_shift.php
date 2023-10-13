@@ -5,7 +5,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $company = $_POST['company'];
     $geturl = $_POST['geturl'];
     $id_warehouse = $_POST['id_warehouse'];
+    echo("123");
   if($id_warehouse = "1500434P"){
+    echo("321");
     $response = [
         "status" => 200,
         "message" => "Success connRetail",
@@ -52,6 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ];
    
     }else if($id_warehouse = "2500434P"){
+        echo("456");
         $response = [
         "status" => 200,
         "message" => "Success connRetail",
@@ -87,6 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ];
 
 }else if($id_warehouse = "3500434P"){
+    echo("678");
     $response = [
         "status" => 200,
         "message" => "Success connRetail",
@@ -118,8 +122,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         "updated_by" => "Michael Davis"
         ]
         ]
-      ];
+      ]; 
      }else{
+        echo("777");
         $response = [
             "status" => 404,
             "message" => "Gagal",
@@ -127,7 +132,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               ];
             echo json_encode($response);
     } 
- 
+    echo("444");
     echo json_encode($response);
    
 }
