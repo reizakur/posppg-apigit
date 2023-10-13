@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }else{
     echo ('$errror');
     
-    echo ($$geturl);
+    echo ($geturl);
 }
 echo ('$gataunihh');
 ?>
