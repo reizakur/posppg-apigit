@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo($id_warehouse);
 if($id_warehouse = "1500434P"){
     echo("damn 111");
-    $reqponse = [
+    $response = [
         "status" => 200,
         "message" => "Success connRetail",
         "access_token" => "asadaMMsnCAq28NGKqEf6jRueKLsf0wFnAcz2dOrPQF53GYS9AUzwWtiNFKQRniFb",
@@ -56,7 +56,7 @@ if($id_warehouse = "1500434P"){
    
     }else if($id_warehouse = "2500434P"){
         echo("damn 333");
-        $reqponse = [
+        $response = [
         "status" => 200,
         "message" => "Success connRetail",
         "access_token" => "asadaMMsnCAq28NGKqEf6jRueKLsf0wFnAcz2dOrPQF53GYS9AUzwWtiNFKQRniFb",
@@ -92,7 +92,7 @@ if($id_warehouse = "1500434P"){
 
 }else if($id_warehouse = "3500434P"){
     echo("damn 444");
-    $reqponse = [
+    $response = [
         "status" => 200,
         "message" => "Success connRetail",
         "access_token" => "asadaMMsnCAq28NGKqEf6jRueKLsf0wFnAcz2dOrPQF53GYS9AUzwWtiNFKQRniFb",
