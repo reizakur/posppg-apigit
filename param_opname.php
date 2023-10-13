@@ -4,9 +4,10 @@ include("koneksi.php");
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $company = $_POST['company'];
     $geturl = $_POST['geturl'];
-    $dataminventory = $_POST['dataminventory'];
+    // $dataminventory = $_POST['dataminventory'];
     echo ('$dataminventory56565');
-    echo ($dataminventory);
+    
+    echo ($$geturl);
     // Validate JSON data
     // if (!empty($dataminventory)) {
     //     $jsonData = $_POST['dataminventory'];
