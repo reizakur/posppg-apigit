@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // $dataminventory = $_POST['dataminventory'];
     echo ('$dataminventory56565');
     
-    echo ($$geturl);
+    echo ($geturl);
     // Validate JSON data
     // if (!empty($dataminventory)) {
     //     $jsonData = $_POST['dataminventory'];
