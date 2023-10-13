@@ -4,88 +4,79 @@ include("koneksi.php");
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $company = $_POST['company'];
     $geturl = $_POST['geturl'];
-    $datashift = $_POST['datashift'];
-    
+    $dataminventory = $_POST['dataminventory'];
+    echo ('$dataminventory56565');
+    echo ($dataminventory);
     // Validate JSON data
-    if (!empty($datashift)) {
-        $jsonData = $_POST['datashift'];
+    if (!empty($dataminventory)) {
+        $jsonData = $_POST['dataminventory'];
         $data = json_decode($jsonData, true);
 
         if ($data !== null) {
             // Loop through the 'data' array
             foreach ($data['data'] as $item) {
 
-i$  `-*/9d
-movementdat$    `-*/9e
-warehouse_i$    `-*/9d
-trxtim$ `-*/9e
-syncedb$    `-*/9i
-syncedade$  `-*/9m
-opnametyp$  `-*/9e
-created_a$  `-*/9t
-updated_a$  `-*/9t
-created_b$  `-*/9y
-updated_by
-
+                $id = $item['id'];
+                $movementdate = $item['movementdate'];
                 $warehouse_id = $item['warehouse_id'];
-                $cashier_id = $item['cashier_id'];
-                $shift_id = $item['shift_id'];
-                $shiftin = $item['shiftin'];
-                $shiftout = $item['shiftout'];
-                $amtmodal = $item['amtmodal'];
-                $amtsetor = $item['amtsetor'];
-                $amtshift = $item['amtshift'];
+                $trxtime = $item['trxtime'];
+                $syncedbi = $item['syncedbi'];
+                $syncedadem = $item['syncedadem'];
+                $opnametype = $item['opnametype'];
                 $created_at = $item['created_at'];
                 $updated_at = $item['updated_at'];
                 $created_by = $item['created_by'];
                 $updated_by = $item['updated_by'];
 
                 // Insert data into the m_shiftlog table
-                $sqlShiftLog = "INSERT INTO m_shiftlog 
-                (warehouse_id, cashier_id, shift_id, shiftin, shiftout, amtmodal, amtsetor, amtshift, created_at, updated_at, created_by, updated_by) 
-                VALUES 
-                ('$warehouse_id', '$cashier_id', '$shift_id', '$shiftin', '$shiftout', '$amtmodal', '$amtsetor', '$amtshift', '$created_at', '$updated_at', '$created_by', '$updated_by')";
+                $sqlMInventory = "INSERT INTO m_inventory 
+                (movementdate, warehouse_id, trxtime, syncedbi, syncedadem, opnametype, created_at, updated_at, created_by, updated_by)  
+                  VALUES 
+                ('$movementdate', '$warehouse_id', '$trxtime', '$syncedbi', '$syncedadem', '$opnametype', '$created_at', '$updated_at', '$created_by', '$updated_by')";
 
-                $resultShiftLog = mysqli_query($con, $sqlShiftLog);
- 
+                // $resultShiftLog = mysqli_query($con, $sqlShiftLog);
+
 
                 // Loop through the 'datamshiftbonmanual' array
-                foreach ($item['datamshiftbonmanual'] as $shiftBonManual) {
-                    $modal1 = $shiftBonManual['modal1'];
-                    $modal2 = $shiftBonManual['modal2'];
-                    $sisa1 = $shiftBonManual['sisa1'];
-                    $sisa2 = $shiftBonManual['sisa2'];
-                    $created_at = $shiftBonManual['created_at'];
-                    $updated_at = $shiftBonManual['updated_at'];
-                    $created_by = $shiftBonManual['created_by'];
-                    $updated_by = $shiftBonManual['updated_by'];
+                foreach ($data['datamshiftbonmanual'] as $shiftBonManual) {
 
-                    // Insert data into the m_shift_bon_manual table
-                    $sqlShiftBonManual = "INSERT INTO m_shift_bon_manual 
-                    (shiftlog_id, modal1, modal2, sisa1, sisa2, created_at, updated_at, created_by, updated_by) 
-                    VALUES 
-                    ('$shiftlog_id', '$modal1', '$modal2', '$sisa1', '$sisa2', '$created_at', '$updated_at', '$created_by', '$updated_by')";
+                    $id = $items['id'];
+                    $product_id = $items['product_id'];
+                    $qty = $items['qty'];
+                    $uom_id = $items['uom_id'];
+                    $trxtime = $items['trxtime'];
+                    $inventory_id = $items['inventory_id'];
+                    $created_at = $items['created_at'];
+                    $updated_at = $items['updated_at'];
+                    $created_by = $items['created_by'];
+                    $updated_by = $items['updated_by'];
 
-                    $resultShiftBonManual = mysqli_query($con, $sqlShiftBonManual);
- 
+                    $sqlMInventory = "INSERT INTO m_inventoryline 
+                    (product_id, qty, uom_id, trxtime, inventory_id, created_at, updated_at, created_by, updated_by)  
+                      VALUES 
+                    ('$product_id', '$qty', '$uom_id', '$trxtime', '$inventory_id', '$created_at', '$updated_at', '$created_by', '$updated_by')";               
+                        
+                
                 }
+
+
             }
             $response = [
                 "status" => 200,
-                "message" => "Success", 
+                "message" => "Success",
             ];
             echo json_encode($response);
         } else {
             $response = [
                 "status" => 405,
-                "message" => "Gagal", 
+                "message" => "Gagal",
             ];
             echo json_encode($response);
         }
     } else {
         $response = [
             "status" => 405,
-            "message" => "Internet Bermaslah", 
+            "message" => "Internet Bermaslah",
         ];
         echo json_encode($response);
     }
