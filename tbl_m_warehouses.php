@@ -112,7 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         "data" => [
             [
-                "name" => "Retail BAZAAR ATRIUM DSM ALL BRAND 1 S/D 30 SEP *ada shit",
+                "name" => "Retail BAZAAR ATRIUM DSM ALL BRAND 1 S/D 30 SEP * ini ada shit",
                 "value" => "3500434P",
                 "active" => "Y"
             ],

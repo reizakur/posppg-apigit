@@ -5,10 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $company = $_POST['company'];
     $geturl = $_POST['geturl'];
     $id_warehouse = $_POST['id_warehouse'];
-    echo("damn 666");
-    echo($id_warehouse);
-if($id_warehouse = "1500434P"){
-    echo("damn 111");
+  if($id_warehouse = "1500434P"){
     $response = [
         "status" => 200,
         "message" => "Success connRetail",
@@ -55,7 +52,6 @@ if($id_warehouse = "1500434P"){
     ];
    
     }else if($id_warehouse = "2500434P"){
-        echo("damn 333");
         $response = [
         "status" => 200,
         "message" => "Success connRetail",
@@ -91,7 +87,6 @@ if($id_warehouse = "1500434P"){
         ];
 
 }else if($id_warehouse = "3500434P"){
-    echo("damn 444");
     $response = [
         "status" => 200,
         "message" => "Success connRetail",
@@ -124,11 +119,7 @@ if($id_warehouse = "1500434P"){
         ]
         ]
       ];
-      echo("damn cccc");
-      echo json_encode($response);
-    }else{
-        echo("damn ooooo");
-    
+     }else{
         $response = [
             "status" => 404,
             "message" => "Gagal",
@@ -137,7 +128,6 @@ if($id_warehouse = "1500434P"){
             echo json_encode($response);
     } 
  
-    echo("damn pppp");
     echo json_encode($response);
    
 }
