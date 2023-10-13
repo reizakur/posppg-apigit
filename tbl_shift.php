@@ -5,6 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $company = $_POST['company'];
     $geturl = $_POST['geturl'];
     $id_warehouse = $_POST['id_warehouse'];
+    echo("damn 666");
 if($id_warehouse = "1500434P"){
     $reqponse = [
         "status" => 200,
