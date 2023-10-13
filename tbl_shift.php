@@ -11,6 +11,7 @@ if($id_warehouse = "1500434P"){
         "message" => "Success connRetail",
         "access_token" => "asadaMMsnCAq28NGKqEf6jRueKLsf0wFnAcz2dOrPQF53GYS9AUzwWtiNFKQRniFb",
         "data" => [
+            [
             "id" => "001",
             "warehouse_id" => "1500434P",
             "name" => "Shift 1",
@@ -47,7 +48,7 @@ if($id_warehouse = "1500434P"){
         "updated_by" => "Michael Davis"
     ]
      
-    
+        ]
     ];
    
     }else if($id_warehouse = "2500434P"){
@@ -57,6 +58,7 @@ if($id_warehouse = "1500434P"){
         "access_token" => "asadaMMsnCAq28NGKqEf6jRueKLsf0wFnAcz2dOrPQF53GYS9AUzwWtiNFKQRniFb",
         
         "data" => [
+        [
         "id" => "001",
         "warehouse_id" => "2500434P",
         "name" => "Shift 1",
@@ -80,6 +82,7 @@ if($id_warehouse = "1500434P"){
             "created_by" => "Alice Johnson",
             "updated_by" => "Bob Williams"
 
+        ]
         ]
         ];
 
@@ -115,8 +118,10 @@ if($id_warehouse = "1500434P"){
         "created_by" => "Eva Brown",
         "updated_by" => "Michael Davis"
         ]
+        ]
       ];
-
+    //   header('Content-Type: application/json');
+      echo json_encode($response);
     }else{
         $response = [
             "status" => 404,
