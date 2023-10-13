@@ -121,7 +121,7 @@ if($id_warehouse = "1500434P"){
         ]
         ]
       ];
-    //   header('Content-Type: application/json');
+      echo("damn 555");
       echo json_encode($response);
     }else{
         $response = [
