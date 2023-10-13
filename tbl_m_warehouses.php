@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         "data" => [
             [
-                "name" => "BAZAAR SPA",
+                "name" => "BAZAAR SPA *YANG INI ADA SHIFT",
                 "value" => "1500434P",
                 "active" => "Y"
             ],
@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         "data" => [
             [
-                "name" => "FnB BAZAAR ATRIUM DSM ALL BRAND 1 S/D 30 SEP",
+                "name" => "FnB BAZAAR ATRIUM DSM ALL BRAND 1 S/D 30 SEP * ADA SHIFT",
                 "value" => "2500434P",
                 "active" => "Y"
             ],
@@ -112,7 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         "data" => [
             [
-                "name" => "Retail BAZAAR ATRIUM DSM ALL BRAND 1 S/D 30 SEP",
+                "name" => "Retail BAZAAR ATRIUM DSM ALL BRAND 1 S/D 30 SEP *ada shit",
                 "value" => "3500434P",
                 "active" => "Y"
             ],
