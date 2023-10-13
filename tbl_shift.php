@@ -138,7 +138,8 @@ if($id_warehouse = "1500434P"){
     } 
  
     echo("damn pppp");
-     
+    echo json_encode($response);
+   
 }
 
     ?>
