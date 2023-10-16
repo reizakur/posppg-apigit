@@ -5,18 +5,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $icpl = $_POST['icpl'];
  
     if ($icpl == "ICPL29") {
+        
         $icplValue = "ICPL29";
         $effectiveDate = "2023-10-01";
         $priceValue = "100.00";
     } elseif ($icpl == "ICPL30") {
+        
         $icplValue = "ICPL30";
         $effectiveDate = "2023-10-02";
         $priceValue = "150.00";
     } elseif ($icpl == "ICPL31") {
+        
         $icplValue = "ICPL31";
         $effectiveDate = "2023-10-03";
         $priceValue = "200.00";
     } else {
+        
         $icplValue = "DefaultICPL";
         $effectiveDate = "2023-10-01";
         $priceValue = "100.00";
@@ -270,6 +274,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 ]
             ];
 
+
     $response = [
         "status" => 200,
         "message" => "Success",
@@ -277,10 +282,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         "data" => $data
     ];
     header('Content-Type: application/json');
-    e{
+    echo json_encode($response);
+}else{
     $response = [
         "status" => 201,
         "message" => "Failed"
     ];
-    
+    echo json_encode($response);
+}
 ?>
