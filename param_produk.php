@@ -3,25 +3,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $company = $_POST['company']; 
     $geturl = $_POST['geturl']; 
     $icpl = $_POST['icpl'];
-    echo("tes777");
-    echo($icpl);
+ 
     if ($icpl == "ICPL29") {
-        echo("tes333"); 
         $icplValue = "ICPL29";
         $effectiveDate = "2023-10-01";
         $priceValue = "100.00";
     } elseif ($icpl == "ICPL30") {
-        echo("tes111");
         $icplValue = "ICPL30";
         $effectiveDate = "2023-10-02";
         $priceValue = "150.00";
     } elseif ($icpl == "ICPL31") {
-        echo("tes222");
         $icplValue = "ICPL31";
         $effectiveDate = "2023-10-03";
         $priceValue = "200.00";
     } else {
-        echo("tes444");
         $icplValue = "DefaultICPL";
         $effectiveDate = "2023-10-01";
         $priceValue = "100.00";
@@ -275,7 +270,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 ]
             ];
 
-echo("tes123");
     $response = [
         "status" => 200,
         "message" => "Success",
@@ -283,12 +277,10 @@ echo("tes123");
         "data" => $data
     ];
     header('Content-Type: application/json');
-    echo json_encode($response);
-}else{
+    e{
     $response = [
         "status" => 201,
         "message" => "Failed"
     ];
-    echo json_encode($response);
-}
+    
 ?>
