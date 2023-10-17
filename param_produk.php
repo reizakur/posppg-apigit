@@ -188,7 +188,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         ]
                     
                 ], 
-                [
+                
                     "data_m_product" => [
                         [
                             "id_m_product_menu" => "1",
@@ -272,7 +272,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             "price" => "$priceValue"
                         ],
                     ]
-                ]
+                
             ];
 
 
