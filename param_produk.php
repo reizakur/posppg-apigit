@@ -160,7 +160,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                             // "product_id" => "Product3",
                                             "menu_category_id" => "2",
                                             // "active_m_product_menu" => "true",
-                                            // "id_m_product" => "3",
+                                            "id_m_product" => "3",
                                             // "value" => "300.00",
                                             // "name" => "Product Name 3",
                                             // "stocked" => "true",
