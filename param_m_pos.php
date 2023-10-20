@@ -8,15 +8,8 @@ $jsonData = $_POST['datampos'];
  $data = json_decode($_POST['datampos'],true);
 // $data = json_decode($jsonData, true);
 // echo($data);
-if ($data != null) { 
-echo("damn 555");
-echo($data);
-}else{ 
-    echo("damn 333");
-    echo($data);
-}
-// print_r($data); 
-echo('$data 33333');
+ 
+// print_r($data);  
 foreach ($data['data'] as $item) {  
 $id = $item['id'];
 $documentno = $item['documentno'];
@@ -105,8 +98,8 @@ if ($kondisi_pos == 'void'){
  }
        
         if($sqlsatu){
-            echo "m_pospayment berhasil";
-             echo "Record inserted successfully yang m_psnya.<br>";
+            // echo "m_pospayment berhasil";
+            //  echo "Record inserted successfully yang m_psnya.<br>";
            $lastPosId = mysqli_insert_id($con); 
         }else{
           
@@ -154,8 +147,8 @@ if($kondisi_posline == 'void'){
 
 
     if($sqlsatu){
-        echo "m_posline berhasil";
-         echo "Record inserted successfully yang m_psnya.<br>";
+        // echo "m_posline berhasil";
+        //  echo "Record inserted successfully yang m_psnya.<br>";
        $lastPosLineId = mysqli_insert_id($con); 
     }else{
       
@@ -179,8 +172,8 @@ if($kondisi_posline == 'void'){
     $go=mysqli_query($con,$sqlsatu); 
 
     if($sqlsatu){
-        echo "m_posline berhasil";
-         echo "Record inserted successfully yang m_psnya.<br>";
+        // echo "m_posline berhasil";
+        //  echo "Record inserted successfully yang m_psnya.<br>";
        $lastPosLineId = mysqli_insert_id($con); 
     }else{
       
@@ -202,8 +195,8 @@ if($kondisi_posline == 'void'){
     ('$pos_id', '$product_id', '$qty', '$price', '$taxamt', '$discountamt', '$pricelist', '$trxtime', '$created_at', '$updated_at', '$created_by', '$updated_by')");
     $go=mysqli_query($con,$sqlsatu); 
      if($sqlsatu){
-            echo "m_posline berhasil";
-             echo "Record inserted successfully yang m_psnya.<br>";
+            // echo "m_posline berhasil";
+            //  echo "Record inserted successfully yang m_psnya.<br>";
            $lastPosLineId = mysqli_insert_id($con); 
         }else{
           
@@ -242,8 +235,8 @@ if($kondisi_posline == 'void'){
             }
 
               if($sqlsatu){
-                echo "m_vpos_komisi berhasil";
-                 echo "Record inserted successfully yang m_psnya.<br>";
+                // echo "m_vpos_komisi berhasil";
+                //  echo "Record inserted successfully yang m_psnya.<br>";
                $lastPosLineId = mysqli_insert_id($con); 
             }else{
               
@@ -282,8 +275,8 @@ if($kondisi_pos_treatment == 'void'){
     
 }
            if($sqlsatu){
-                echo "m_vpos_treatment berhasil";
-                echo "Record inserted successfully yang m_psnya.<br>";
+                // echo "m_vpos_treatment berhasil";
+                // echo "Record inserted successfully yang m_psnya.<br>";
                $lastPosLineId = mysqli_insert_id($con); 
             }else{              
                 echo "m_vpos_treatment gagal";
