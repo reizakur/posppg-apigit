@@ -55,11 +55,17 @@ $go=mysqli_query($con,$findid);
 if ($findid) {
     echo('$findid777');
     echo($go);
-    $row = mysqli_fetch_assoc($findid);
-    
+    $row = mysqli_fetch_assoc($findid);    
     if ($row) {
         $documentno = $row['documentno'];
+        $numericPart = intval($lastID) - intval($date);
+        echo('$numericPart99999');
+        echo($numericPart);
+        $lastPart = sprintf('%04d', $numericPart);
+        echo($lastPart);
         echo "Last Document Number: $documentno";
+        $documentno++;
+
     } else {
         echo "No results found.";
     }
