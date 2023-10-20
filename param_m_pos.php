@@ -9,6 +9,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo('$datampos555');
   $jsonData = $_POST['datampos'];
 echo('$data 7777');
+echo($jsonData);
+echo('$data oolll');
 $data = json_decode($jsonData, true);
 echo($data);
 echo('$data 33333');
