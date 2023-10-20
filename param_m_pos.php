@@ -1,23 +1,21 @@
 <?php
 include ("koneksi.php");
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $company = $_POST['company']; 
-    $geturl = $_POST['geturl']; 
-    $datampos = $_POST['datampos'];     
-    // echo($datampos);
-    // echo($datampos);
-    // echo('$datampos555');
-  $jsonData = $_POST['datampos'];
-// echo('$data 7777');
-// echo($jsonData);
-// echo('$data oolll');
-$data = json_decode($jsonData, true);
-echo($data);
+$company = $_POST['company']; 
+$geturl = $_POST['geturl']; 
+$datampos = $_POST['datampos'];      
+$jsonData = $_POST['datampos']; 
+ $data = json_decode($_POST['datampos'],true);
+// $data = json_decode($jsonData, true);
+// echo($data);
+if ($data != null) { 
+echo("damn 555");
+}else{ 
+    echo("damn 333");
+}
 // print_r($data); 
 echo('$data 33333');
-foreach ($data['data'] as $item) { 
-// echo('kkkk');
-// echo($item['documentno']);
+foreach ($data['data'] as $item) {  
 $id = $item['id'];
 $documentno = $item['documentno'];
 $ranno = $item['ranno'];
@@ -295,6 +293,3 @@ if($kondisi_pos_treatment == 'void'){
     }
 }
 }
-  
-  
-?>
