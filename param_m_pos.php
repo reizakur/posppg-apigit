@@ -5,18 +5,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $geturl = $_POST['geturl']; 
     $datampos = $_POST['datampos'];     
     // echo($datampos);
-    echo($datampos);
-    echo('$datampos555');
+    // echo($datampos);
+    // echo('$datampos555');
   $jsonData = $_POST['datampos'];
-echo('$data 7777');
-echo($jsonData);
-echo('$data oolll');
+// echo('$data 7777');
+// echo($jsonData);
+// echo('$data oolll');
 $data = json_decode($jsonData, true);
 echo($data);
-print_r($data); 
+// print_r($data); 
 echo('$data 33333');
 foreach ($data['data'] as $item) { 
-echo('kkkk');
+// echo('kkkk');
 // echo($item['documentno']);
 $id = $item['id'];
 $documentno = $item['documentno'];
