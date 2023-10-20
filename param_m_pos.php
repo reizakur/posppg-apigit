@@ -36,12 +36,14 @@ $kondisi_pos = $item['kondisi_pos'];
 
  
 if ($kondisi_pos == 'void'){
+    echo("satu");
         $sqlsatu = mysqli_query($con,"insert into m_vpos 
         (documentno,ranno,dateordered,bonmanual,description,trxtime,warehouse_id,cashier_id,customer_id,gro_id,guide_id,created_at,updated_at,created_by,updated_by)
         values 
         ('$documentno', '$ranno', '$dateordered', '$bonmanual', '$description', '$trxtime', '$syncedbi', '$syncedadem', '$warehouse_id', '$cashier_id', '$customer_id', '$gro_id', '$guide_id', '$created_at', '$updated_at', '$created_by', '$updated_by')");
         $go=mysqli_query($con,$sqlsatu); 
     }else{
+        echo("dua");
         $sqlsatu = mysqli_query($con,"insert into m_pos 
         (documentno,ranno,dateordered,bonmanual,description,trxtime,syncedbi,syncedadem,warehouse_id,cashier_id,customer_id,gro_id,guide_id,created_at,updated_at,created_by,updated_by)
         values 
@@ -79,6 +81,7 @@ if ($kondisi_pos == 'void'){
         $kondisi_pospayment = $payment['kondisi_pospayment'];
 
  if ($kondisi_pospayment == 'void'){
+    echo("duasatu");
     $sqlsatu = mysqli_query($con,"insert into m_vpospayment 
     (id, pos_id, invoicedamt, payamt, changeamt, ptype, edc_id, card_id, cardnumber, cardname, trxtime, created_at, updated_at, created_by, updated_by)
     values 
@@ -88,6 +91,7 @@ if ($kondisi_pos == 'void'){
 
 
  }else{
+    echo("duasatutigas");
     $sqlsatu = mysqli_query($con,"insert into m_pospayment 
     (id, pos_id, bill, payamt, changeamt, ptype, edc_id, card_id, cardnumber, cardname, trxtime, created_at, updated_at, created_by, updated_by)
     values 
