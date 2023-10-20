@@ -54,7 +54,7 @@ $findid = mysqli_query($con,"select documentno from m_pos WHERE documentno LIKE 
 $go=mysqli_query($con,$findid); 
 if ($findid) {
     echo('$findid777');
-    echo($findid);
+    echo($go);
     $row = mysqli_fetch_assoc($findid);
     
     if ($row) {
