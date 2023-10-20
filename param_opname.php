@@ -9,13 +9,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo ($dataminventory);
     // Validate JSON data
     if (!empty($dataminventory)) {
+        echo ('satu123');
         $jsonData = $_POST['dataminventory'];
         $data = json_decode($jsonData, true);
-
+        echo ($data);
         if ($data !== null) {
+            echo ('satu124');
             // Loop through the 'data' array
             foreach ($data['data'] as $item) {
-
+                echo ('satu125');
                 $id = $item['id'];
                 $movementdate = $item['movementdate'];
                 $warehouse_id = $item['warehouse_id'];
@@ -28,18 +30,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $created_by = $item['created_by'];
                 $updated_by = $item['updated_by'];
 
-                // Insert data into the m_shiftlog table
-                $sqlMInventory = "INSERT INTO m_inventory 
-                (movementdate, warehouse_id, trxtime, syncedbi, syncedadem, opnametype, created_at, updated_at, created_by, updated_by)  
-                  VALUES 
-                ('$movementdate', '$warehouse_id', '$trxtime', '$syncedbi', '$syncedadem', '$opnametype', '$created_at', '$updated_at', '$created_by', '$updated_by')";
+$sqlsatu = mysqli_query($con,"insert into m_inventory 
+(movementdate, warehouse_id, trxtime, syncedbi, syncedadem, opnametype, created_at, updated_at, created_by, updated_by)
+values 
+('$movementdate', '$warehouse_id', '$trxtime', '$syncedbi', '$syncedadem', '$opnametype', '$created_at', '$updated_at', '$created_by', '$updated_by')");
 
+$go=mysqli_query($con,$sqlsatu); 
                 // $resultShiftLog = mysqli_query($con, $sqlShiftLog);
-
+                if ($sqlsatu){
+                    echo ("m_inventory true");
+                }else{
+                    echo ("m_inventory false");
+                }
 
                 // Loop through the 'datamshiftbonmanual' array
                 foreach ($data['datamshiftbonmanual'] as $shiftBonManual) {
-
+                    echo ('satu128');
                     $id = $items['id'];
                     $product_id = $items['product_id'];
                     $qty = $items['qty'];
@@ -51,11 +57,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $created_by = $items['created_by'];
                     $updated_by = $items['updated_by'];
 
-                    $sqlMInventory = "INSERT INTO m_inventoryline 
-                    (product_id, qty, uom_id, trxtime, inventory_id, created_at, updated_at, created_by, updated_by)  
-                      VALUES 
-                    ('$product_id', '$qty', '$uom_id', '$trxtime', '$inventory_id', '$created_at', '$updated_at', '$created_by', '$updated_by')";               
-                        
+               
+                     $sqlsatu = mysqli_query($con,"insert into m_inventoryline 
+                     (product_id, qty, uom_id, trxtime, inventory_id, created_at, updated_at, created_by, updated_by)
+                     values 
+                     ('$product_id', '$qty', '$uom_id', '$trxtime', '$inventory_id', '$created_at', '$updated_at', '$created_by', '$updated_by')");
+                     $go=mysqli_query($con,$sqlsatu); 
+                     // ... access other fields in data_m_vpospayment ...
+                     if ($sqlsatu){
+                        echo ("m_inventoryline true");
+                    }else{
+                        echo ("m_inventoryline false");
+                    }
                 
                 }
 
