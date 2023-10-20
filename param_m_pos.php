@@ -33,7 +33,11 @@ $kondisi_pos = $item['kondisi_pos'];
 echo('$pppppp');
 $now = new DateTime();
 $formattedDate = $now->format('Y-m-d');
+echo($formattedDate);
+echo('$formattedDate123123');
 list($year, $month, $day) = explode("-", $date);
+echo($year. $month. $day);
+echo('$formattedDate123123 date');
 
 $year = substr($year, -2);
 if (strlen($month) == 1) {
