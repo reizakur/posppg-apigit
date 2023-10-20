@@ -31,7 +31,10 @@ $created_by = $item['created_by'];
 $updated_by = $item['updated_by'];
 $kondisi_pos = $item['kondisi_pos'];
 
- 
+$now = new DateTime();
+$formattedDate = $now->format('Y-m-d');
+echo($formattedDate);
+echo('$formattedDate666');
 if ($kondisi_pos == 'void'){
     echo("insert into m_vpos");
         $sqlsatu = mysqli_query($con,"insert into m_vpos 
@@ -48,8 +51,8 @@ if ($kondisi_pos == 'void'){
         $go=mysqli_query($con,$sqlsatu); 
     }
     if($sqlsatu){
-        echo "m_pos berhasil";
-         echo "Record inserted successfully yang m_psnya.<br>";
+        // echo "m_pos berhasil";
+        //  echo "Record inserted successfully yang m_psnya.<br>";
        $lastPosId = mysqli_insert_id($con); 
     }else{
       
@@ -88,7 +91,7 @@ if ($kondisi_pos == 'void'){
 
 
  }else{
-    echo("duasatutigas");
+    // echo("duasatutigas");
     $sqlsatu = mysqli_query($con,"insert into m_pospayment 
     (pos_id, bill, payamt, changeamt, ptype, edc_id, card_id, cardnumber, cardname, trxtime, created_at, updated_at, created_by, updated_by)
     values 

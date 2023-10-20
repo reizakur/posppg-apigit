@@ -1,7 +1,0 @@
-{
-    "api":[
-        {
-            "nama nya siapa"
-        }
-        ]
-}
