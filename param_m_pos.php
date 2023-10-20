@@ -36,7 +36,7 @@ $formattedDate = $now->format('Y-m-d');
 echo($formattedDate);
 echo('$formattedDate123123');
 list($year, $month, $day) = explode("-", $date);
-echo($year. $month. $day);
+echo(explode("-", $date));
 echo('$formattedDate123123 date');
 
 $year = substr($year, -2);
