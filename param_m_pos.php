@@ -60,13 +60,24 @@ if ($findid) {
         $documentno = $row['documentno'];
         echo('$documentnolllllllllllllllll');
         echo($documentno);
-        $numericPart = intval($documentno) - intval($nodocumentexplode);
-        echo('$numericPart99999');
-        echo($numericPart);
-        $lastPart = sprintf('%04d', $numericPart);
+        $numberadd = substr($documentno, -6);
+        $datequ = substr($last6Digits, 0, 6);
+        // $last6Digits = substr($documentno, -6);
+        echo('$last6Digits999kklklklklklk');
+        echo($numberadd);
+        echo('ausssss');
+        echo($datequ);
+        $numberadd++;
+        $mergerdoc = $numberadd+$datequ;
+        echo('$mergerdoc888');
+        echo($mergerdoc);
+                // $numericPart = intval($documentno) - intval($nodocumentexplode);
+        // echo('$numericPart99999');
+        // echo($numericPart);
+        // $lastPart = sprintf('%04d', $numericPart);
         echo($lastPart);
         echo "Last Document Number: $documentno";
-        $documentno++;
+        // $documentno++;
 
     } else {
         echo "No results found.";
