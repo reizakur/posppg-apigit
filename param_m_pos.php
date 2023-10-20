@@ -49,6 +49,8 @@ echo($nodocumentexplode);
 $findid = mysqli_query($con,"select documentno from m_pos WHERE documentno LIKE '%$nodocumentexplode%' ORDER BY documentno DESC limit 1");
 $go=mysqli_query($con,$findid); 
 if ($findid) {
+    echo('$findid777');
+    echo($findid);
     $row = mysqli_fetch_assoc($findid);
     
     if ($row) {
