@@ -46,9 +46,10 @@ if (strlen($day) == 1) {
 $nodocumentexplode = $day . $month . $year; 
 echo('$gggggg');
 echo($nodocumentexplode);
-$findid = mysqli_query($con,"SELECT * FROM m_pos WHERE documentno LIKE '%$nodocumentexplode%' ORDER BY documentno DESC limit 1");
+$findid = mysqli_query($con,"select * from m_pos WHERE documentno LIKE '%$nodocumentexplode%' ORDER BY documentno DESC limit 1");
 $go=mysqli_query($con,$sqlsatu); 
 echo('$kkkk');
+echo($go);
 echo($findid);
 echo('$findid888');
 
