@@ -4,6 +4,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $company = $_POST['company']; 
     $geturl = $_POST['geturl']; 
     $datampos = $_POST['datampos'];
+    
+    $datampos = $_POST['datampos'];
     echo($datampos);
         echo("hmmmmm");
   
@@ -12,31 +14,40 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 $data = json_decode($jsonData, true);
 echo($data);
 foreach ($data['data'] as $item) { 
-        $id = $item['id'];
-        $documentno = $item['documentno'];
-        $ranno = $item['ranno'];
-        $syncedbi = $item['syncedbi'];
-        $syncedadem = $item['syncedadem'];
-        $dateordered = $item['dateordered'];
-        $bonmanual = $item['bonmanual'];
-        $description = $item['description'];
-        $trxtime = $item['trxtime'];
-        $warehouse_id = $item['warehouse_id'];
-        $cashier_id = $item['cashier_id'];
-        $customer_id = $item['customer_id'];
-        $gro_id = $item['gro_id'];
-        $guide_id = $item['guide_id'];
-        $created_at = $item['created_at'];
-        $updated_at = $item['updated_at'];
-        $created_by = $item['created_by'];
-        $updated_by = $item['updated_by'];
-         
-        $sqlsatu = mysqli_query($con,"insert into m_pos 
-        (documentno, ranno, dateordered, bonmanual, description, trxtime, syncedbi, syncedadem, warehouse_id, cashier_id, customer_id, gro_id, guide_id, created_at, updated_at, created_by, updated_by)
+$id = $item['id'];
+$documentno = $item['documentno'];
+$ranno = $item['ranno'];
+$dateordered = $item['dateordered'];
+$bonmanual = $item['bonmanual'];
+$description = $item['description'];
+$trxtime = $item['trxtime'];
+$syncedbi = $item['syncedbi'];
+$syncedadem = $item['syncedadem'];
+$warehouse_id = $item['warehouse_id'];
+$cashier_id = $item['cashier_id'];
+$customer_id = $item['customer_id'];
+$gro_id = $item['gro_id'];
+$guide_id = $item['guide_id'];
+$created_at = $item['created_at'];
+$updated_at = $item['updated_at'];
+$created_by = $item['created_by'];
+$updated_by = $item['updated_by'];
+$kondisi_pos = $item['kondisi_pos'];
+
+ 
+if ($kondisi_pos == 'void'){
+        $sqlsatu = mysqli_query($con,"insert into m_vpos 
+        (documentno,ranno,dateordered,bonmanual,description,trxtime,warehouse_id,cashier_id,customer_id,gro_id,guide_id,created_at,updated_at,created_by,updated_by)
         values 
         ('$documentno', '$ranno', '$dateordered', '$bonmanual', '$description', '$trxtime', '$syncedbi', '$syncedadem', '$warehouse_id', '$cashier_id', '$customer_id', '$gro_id', '$guide_id', '$created_at', '$updated_at', '$created_by', '$updated_by')");
         $go=mysqli_query($con,$sqlsatu); 
- 
+    }else{
+        $sqlsatu = mysqli_query($con,"insert into m_pos 
+        (documentno,ranno,dateordered,bonmanual,description,trxtime,syncedbi,syncedadem,warehouse_id,cashier_id,customer_id,gro_id,guide_id,created_at,updated_at,created_by,updated_by)
+        values 
+        ('$documentno', '$ranno', '$dateordered', '$bonmanual', '$description', '$trxtime', '$syncedbi', '$syncedadem', '$warehouse_id', '$cashier_id', '$customer_id', '$gro_id', '$guide_id', '$created_at', '$updated_at', '$created_by', '$updated_by')");
+        $go=mysqli_query($con,$sqlsatu); 
+    }
     if($sqlsatu){
         echo "m_pos berhasil";
          echo "Record inserted successfully yang m_psnya.<br>";
@@ -48,11 +59,12 @@ foreach ($data['data'] as $item) {
     }
 
     // Access data_m_vpospayment
-    foreach ($item['data_m_vpospayment'] as $payment) {
+    foreach ($item['data_m_pospayment'] as $payment) {
         $id = $payment['id'];
         $pos_id = $lastPosId;
         $invoicedamt = $payment['invoicedamt'];
         $payamt = $payment['payamt'];
+        $bill = $payment['bill'];
         $changeamt = $payment['changeamt'];
         $ptype = $payment['ptype'];
         $edc_id = $payment['edc_id'];
@@ -64,16 +76,28 @@ foreach ($data['data'] as $item) {
         $updated_at = $payment['updated_at'];
         $created_by = $payment['created_by'];
         $updated_by = $payment['updated_by'];
+        $kondisi_pospayment = $payment['kondisi_pospayment'];
 
-        $sqlsatu = mysqli_query($con,"insert into m_pospayment 
-        (id, pos_id, invoicedamt, payamt, changeamt, ptype, edc_id, card_id, cardnumber, cardname, trxtime, created_at, updated_at, created_by, updated_by)
-        values 
-        ('$id', '$pos_id', '$invoicedamt', '$payamt', '$changeamt', '$ptype', '$edc_id', '$card_id', '$cardnumber', '$cardname', '$trxtime', '$created_at', '$updated_at', '$created_by', '$updated_by')");
-        $go=mysqli_query($con,$sqlsatu); 
-        // ... access other fields in data_m_vpospayment ...
+ if ($kondisi_pospayment == 'void'){
+    $sqlsatu = mysqli_query($con,"insert into m_vpospayment 
+    (id, pos_id, invoicedamt, payamt, changeamt, ptype, edc_id, card_id, cardnumber, cardname, trxtime, created_at, updated_at, created_by, updated_by)
+    values 
+    ('$id', '$pos_id', '$invoicedamt', '$payamt', '$changeamt', '$ptype', '$edc_id', '$card_id', '$cardnumber', '$cardname', '$trxtime', '$created_at', '$updated_at', '$created_by', '$updated_by')");
+    $go=mysqli_query($con,$sqlsatu); 
+    // ... access other fields in data_m_vpospayment ...
 
+
+ }else{
+    $sqlsatu = mysqli_query($con,"insert into m_pospayment 
+    (id, pos_id, bill, payamt, changeamt, ptype, edc_id, card_id, cardnumber, cardname, trxtime, created_at, updated_at, created_by, updated_by)
+    values 
+    ('$id', '$pos_id', '$bill', '$payamt', '$changeamt', '$ptype', '$edc_id', '$card_id', '$cardnumber', '$cardname', '$trxtime', '$created_at', '$updated_at', '$created_by', '$updated_by')");
+    $go=mysqli_query($con,$sqlsatu); 
+    // ... access other fields in data_m_vpospayment ...
+ }
+       
         if($sqlsatu){
-            echo "m_vpospayment berhasil";
+            echo "m_pospayment berhasil";
              echo "Record inserted successfully yang m_psnya.<br>";
            $lastPosId = mysqli_insert_id($con); 
         }else{
@@ -88,26 +112,88 @@ foreach ($data['data'] as $item) {
     foreach ($item['data_mposline'] as $posline) {
         $id = $posline['id']; 
         $pos_id =  $lastPosId;
+        $posline_id = $mposline['posline_id'];
+        $promo_id = $mposline['promo_id'];
+        $promoline_id = $mposline['promoline_id'];
         $product_id =  $mposline['product_id'];
         $qty = $mposline['qty'];
+        $discount = $mposline['discount'];
         $price = $mposline['price'];
         $taxamt = $mposline['taxamt'];
         $discountamt = $mposline['discountamt'];
         $pricelist = $mposline['pricelist'];
+        $applicable = $mposline['applicable'];
         $trxtime = $mposline['trxtime'];
         $created_at = $mposline['created_at'];
         $updated_at = $mposline['updated_at'];
         $created_by = $mposline['created_by'];
         $updated_by = $mposline['updated_by'];
+        $kondisi_posline = $mposline['kondisi_posline'];
+ 
+if($kondisi_posline == 'void'){
+    $sqlsatu = mysqli_query($con,"insert into m_vposline 
+    (pos_id, product_id, qty, price, taxamt, discountamt, trxtime, created_at, updated_at, created_by, updated_by) 
+    values 
+    ('$pos_id', '$product_id', '$qty', '$price', '$taxamt', '$discountamt', '$trxtime', '$created_at', '$updated_at', '$created_by', '$updated_by')");
+    $go=mysqli_query($con,$sqlsatu); 
+    
+}else if($kondisi_posline == 'voidpromo'){
+    $sqlsatu = mysqli_query($con,"insert into m_vposline 
+    (pos_id, product_id, qty, price, taxamt, discountamt, trxtime, created_at, updated_at, created_by, updated_by) 
+    values 
+    ('$pos_id', '$product_id', '$qty', '$price', '$taxamt', '$discountamt', '$trxtime', '$created_at', '$updated_at', '$created_by', '$updated_by')");
+    $go=mysqli_query($con,$sqlsatu); 
 
-        $sqlsatu = mysqli_query($con,"insert into m_posline 
-        (pos_id, product_id, qty, price, taxamt, discountamt, pricelist, trxtime, created_at, updated_at, created_by, updated_by) 
-        values 
-        ('$pos_id', '$product_id', '$qty', '$price', '$taxamt', '$discountamt', '$pricelist', '$trxtime', '$created_at', '$updated_at', '$created_by', '$updated_by')");
-        $go=mysqli_query($con,$sqlsatu); 
-       
 
-        if($sqlsatu){
+    if($sqlsatu){
+        echo "m_posline berhasil";
+         echo "Record inserted successfully yang m_psnya.<br>";
+       $lastPosLineId = mysqli_insert_id($con); 
+    }else{
+      
+        echo "m_posline gagal";
+         echo "Error: " . mysqli_error($con);  
+    }
+
+
+    $sqlsatu = mysqli_query($con,"insert into m_vposline_promo 
+    (pos_id, product_id, qty, price, taxamt, discountamt, pricelist, trxtime, created_at, updated_at, created_by, updated_by) 
+    values 
+    ('$pos_id', '$product_id', '$qty', '$price', '$taxamt', '$discountamt', '$pricelist', '$trxtime', '$created_at', '$updated_at', '$created_by', '$updated_by')");
+    $go=mysqli_query($con,$sqlsatu); 
+
+
+}else if($kondisi_posline == 'promo'){
+    $sqlsatu = mysqli_query($con,"insert into m_posline 
+    (pos_id, product_id, qty, price, taxamt, discountamt, trxtime, created_at, updated_at, created_by, updated_by) 
+    values 
+    ('$pos_id', '$product_id', '$qty', '$price', '$taxamt', '$discountamt', '$trxtime', '$created_at', '$updated_at', '$created_by', '$updated_by')");
+    $go=mysqli_query($con,$sqlsatu); 
+
+    if($sqlsatu){
+        echo "m_posline berhasil";
+         echo "Record inserted successfully yang m_psnya.<br>";
+       $lastPosLineId = mysqli_insert_id($con); 
+    }else{
+      
+        echo "m_posline gagal";
+         echo "Error: " . mysqli_error($con);  
+    }
+
+    $sqlsatu = mysqli_query($con,"insert into m_posline_promo 
+    (pos_id, product_id, qty, price, taxamt, discountamt, pricelist, trxtime, created_at, updated_at, created_by, updated_by) 
+    values 
+    ('$pos_id', '$product_id', '$qty', '$price', '$taxamt', '$discountamt', '$pricelist', '$trxtime', '$created_at', '$updated_at', '$created_by', '$updated_by')");
+    $go=mysqli_query($con,$sqlsatu); 
+
+
+}else{
+    $sqlsatu = mysqli_query($con,"insert into m_posline 
+    (pos_id, product_id, qty, price, taxamt, discountamt, pricelist, trxtime, created_at, updated_at, created_by, updated_by) 
+    values 
+    ('$pos_id', '$product_id', '$qty', '$price', '$taxamt', '$discountamt', '$pricelist', '$trxtime', '$created_at', '$updated_at', '$created_by', '$updated_by')");
+    $go=mysqli_query($con,$sqlsatu); 
+     if($sqlsatu){
             echo "m_posline berhasil";
              echo "Record inserted successfully yang m_psnya.<br>";
            $lastPosLineId = mysqli_insert_id($con); 
@@ -116,9 +202,10 @@ foreach ($data['data'] as $item) {
             echo "m_posline gagal";
              echo "Error: " . mysqli_error($con);  
         }
+}       
 
-        // Access m_vpos_komisi
-        foreach ($posline['m_vpos_komisi'] as $komisi) {
+
+   foreach ($posline['m_pos_komisi'] as $komisi) {
               $id = $komisi['id'];
               $pos_id = $lastPosId;
               $posline_id = $lastPosLineId;
@@ -131,14 +218,20 @@ foreach ($data['data'] as $item) {
               $updated_at = $komisi['updated_at'];
               $created_by = $komisi['created_by'];
               $updated_by = $komisi['updated_by'];
-              
-
-              $sqlsatu = mysqli_query($con,"insert into m_pos_komisi 
+              $kondisi_pos_komisi = $komisi['kondisi_pos_komisi'];
+            if($kondisi_pos_komisi == 'void'){
+              $sqlsatu = mysqli_query($con,"insert into m_vpos_komisi 
               (pos_id, posline_id, partner_id, totalamt, komisi, komisiamt, payment_id, created_at, updated_at, created_by, updated_by) 
               values 
               ('$pos_id', '$posline_id', '$partner_id', '$totalamt', '$komisi', '$komisiamt', '$payment_id', '$created_at', '$updated_at', '$created_by', '$updated_by')");
               $go=mysqli_query($con,$sqlsatu); 
-
+            }else{
+                $sqlsatu = mysqli_query($con,"insert into m_pos_komisi 
+                (pos_id, posline_id, partner_id, totalamt, komisi, komisiamt, payment_id, created_at, updated_at, created_by, updated_by) 
+                values 
+                ('$pos_id', '$posline_id', '$partner_id', '$totalamt', '$komisi', '$komisiamt', '$payment_id', '$created_at', '$updated_at', '$created_by', '$updated_by')");
+                $go=mysqli_query($con,$sqlsatu);
+            }
 
               if($sqlsatu){
                 echo "m_vpos_komisi berhasil";
@@ -154,7 +247,7 @@ foreach ($data['data'] as $item) {
           }
 
         // Access m_vpos_treatment
-        foreach ($posline['m_vpos_treatment'] as $treatment) {
+        foreach ($posline['m_pos_treatment'] as $treatment) {
             $id = $treatment['id'];
             $pos_id = $lastPosId;
             $posline_id = $lastPosLineId;
@@ -164,13 +257,23 @@ foreach ($data['data'] as $item) {
             $updated_at = $treatment['updated_at'];
             $created_by = $treatment['created_by'];
             $updated_by = $treatment['updated_by'];
-
-            $sqlsatu = mysqli_query($con,"insert into m_pos_treatment 
-            (pos_id, posline_id, terapis_id, room_id, created_at, updated_at, created_by, updated_by) 
-            values 
-            ('$pos_id', '$posline_id', '$terapis_id', '$room_id', '$created_at', '$updated_at', '$created_by', '$updated_by')");
-            $go=mysqli_query($con,$sqlsatu); 
-            if($sqlsatu){
+            $kondisi_pos_treatment = $treatment['kondisi_pos_treatment'];
+if($kondisi_pos_treatment == 'void'){
+    $sqlsatu = mysqli_query($con,"insert into m_vpos_treatment 
+    (pos_id, posline_id, terapis_id, room_id, created_at, updated_at, created_by, updated_by) 
+    values 
+    ('$pos_id', '$posline_id', '$terapis_id', '$room_id', '$created_at', '$updated_at', '$created_by', '$updated_by')");
+    $go=mysqli_query($con,$sqlsatu); 
+    
+}else{
+    $sqlsatu = mysqli_query($con,"insert into m_pos_treatment 
+    (pos_id, posline_id, terapis_id, room_id, created_at, updated_at, created_by, updated_by) 
+    values 
+    ('$pos_id', '$posline_id', '$terapis_id', '$room_id', '$created_at', '$updated_at', '$created_by', '$updated_by')");
+    $go=mysqli_query($con,$sqlsatu); 
+    
+}
+           if($sqlsatu){
                 echo "m_vpos_treatment berhasil";
                 echo "Record inserted successfully yang m_psnya.<br>";
                $lastPosLineId = mysqli_insert_id($con); 
@@ -182,38 +285,71 @@ foreach ($data['data'] as $item) {
            }
 
         // Access m_vposline_promo
-        foreach ($posline['m_vposline_promo'] as $promo) {
-            $id =  $promo['id'];
-            $pos_id = $lastPosId;
-            $posline_id = $lastPosLineId;
-            $promo_id = $promo['promo_id'];
-            $promoline_id = $promo['promoline_id'];
-            $qty = $promo['qty'];
-            $discount = $promo['discount'];
-            $discountamt = $promo['discountamt'];
-            $created_at = $promo['created_at'];
-            $updated_at = $promo['updated_at'];
-            $created_by = $promo['created_by'];
-            $updated_by = $promo['updated_by'];
+        // foreach ($posline['m_vposline_promo'] as $promo) {
+        //     $id =  $promo['id'];
+        //     $pos_id = $lastPosId;
+        //     $posline_id = $lastPosLineId;
+        //     $promo_id = $promo['promo_id'];
+        //     $promoline_id = $promo['promoline_id'];
+        //     $qty = $promo['qty'];
+        //     $discount = $promo['discount'];
+        //     $discountamt = $promo['discountamt'];
+        //     $created_at = $promo['created_at'];
+        //     $updated_at = $promo['updated_at'];
+        //     $created_by = $promo['created_by'];
+        //     $updated_by = $promo['updated_by'];
 
 
 
-            $sqlsatu = mysqli_query($con,"insert into m_posline_promo 
-            (pos_id, posline_id, promo_id, promoline_id, qty, discount, discountamt, created_at, updated_at, created_by, updated_by) 
-            values 
-            ('$pos_id', '$posline_id', '$promo_id', '$promoline_id', '$qty', '$discount', '$discountamt', '$created_at', '$updated_at', '$created_by', '$updated_by')");
-            $go=mysqli_query($con,$sqlsatu); 
+        //     $sqlsatu = mysqli_query($con,"insert into m_posline_promo 
+        //     (pos_id, posline_id, promo_id, promoline_id, qty, discount, discountamt, created_at, updated_at, created_by, updated_by) 
+        //     values 
+        //     ('$pos_id', '$posline_id', '$promo_id', '$promoline_id', '$qty', '$discount', '$discountamt', '$created_at', '$updated_at', '$created_by', '$updated_by')");
+        //     $go=mysqli_query($con,$sqlsatu); 
 
            
-            if($sqlsatu){
-                echo "m_vposline_promo berhasil";
-                echo "Record inserted successfully yang m_psnya.<br>";
-               $lastPosLineId = mysqli_insert_id($con); 
-            }else{              
-                echo "m_vposline_promo gagal";
-                 echo "Error: " . mysqli_error($con);  
-            }
-            }
+        //     if($sqlsatu){
+        //         echo "m_vposline_promo berhasil";
+        //         echo "Record inserted successfully yang m_psnya.<br>";
+        //        $lastPosLineId = mysqli_insert_id($con); 
+        //     }else{              
+        //         echo "m_vposline_promo gagal";
+        //          echo "Error: " . mysqli_error($con);  
+        //     }
+        //     } 
+
+
+        //     foreach ($posline['m_posline_promo'] as $promo) {
+        //         $id =  $promo['id'];
+        //         $pos_id = $lastPosId;
+        //         $posline_id = $lastPosLineId;
+        //         $promo_id = $promo['promo_id'];
+        //         $promoline_id = $promo['promoline_id'];
+        //         $qty = $promo['qty'];
+        //         $discount = $promo['discount'];
+        //         $discountamt = $promo['discountamt'];
+        //         $created_at = $promo['created_at'];
+        //         $updated_at = $promo['updated_at'];
+        //         $created_by = $promo['created_by'];
+        //         $updated_by = $promo['updated_by'];   
+    
+    
+        //         $sqlsatu = mysqli_query($con,"insert into m_posline_promo 
+        //         (pos_id, posline_id, promo_id, promoline_id, qty, discount, discountamt, created_at, updated_at, created_by, updated_by) 
+        //         values 
+        //         ('$pos_id', '$posline_id', '$promo_id', '$promoline_id', '$qty', '$discount', '$discountamt', '$created_at', '$updated_at', '$created_by', '$updated_by')");
+        //         $go=mysqli_query($con,$sqlsatu); 
+    
+               
+        //         if($sqlsatu){
+        //             echo "m_vposline_promo berhasil";
+        //             echo "Record inserted successfully yang m_psnya.<br>";
+        //            $lastPosLineId = mysqli_insert_id($con); 
+        //         }else{              
+        //             echo "m_vposline_promo gagal";
+        //              echo "Error: " . mysqli_error($con);  
+        //         }
+        //         } 
     }
 }
 }
