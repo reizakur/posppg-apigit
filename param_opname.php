@@ -44,7 +44,7 @@ $go=mysqli_query($con,$sqlsatu);
                 }
 
                 // Loop through the 'datamshiftbonmanual' array
-                foreach ($data['datamshiftbonmanual'] as $shiftBonManual) {
+                foreach ($data['data_m_inventoryline'] as $shiftBonManual) {
                     echo ('satu128');
                     $id = $items['id'];
                     $product_id = $items['product_id'];
