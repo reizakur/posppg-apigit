@@ -58,6 +58,8 @@ if ($findid) {
     $row = mysqli_fetch_assoc($findid);    
     if ($row) {
         $documentno = $row['documentno'];
+        echo('$documentnolllllllllllllllll');
+        echo($documentno);
         $numericPart = intval($documentno) - intval($nodocumentexplode);
         echo('$numericPart99999');
         echo($numericPart);
