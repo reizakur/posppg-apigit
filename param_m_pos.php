@@ -46,11 +46,12 @@ if (strlen($day) == 1) {
 $nodocumentexplode = $day . $month . $year; 
 echo('$gggggg');
 echo($nodocumentexplode);
-$findid = mysqli_query($con,"select * from m_pos WHERE documentno LIKE '%$nodocumentexplode%' ORDER BY documentno DESC limit 1");
+$findid = mysqli_query($con,"select documentno from m_pos WHERE documentno LIKE '%$nodocumentexplode%' ORDER BY documentno DESC limit 1");
 $go=mysqli_query($con,$sqlsatu); 
 if ($findid) {
     // The query ran successfully, you can proceed with further operations here.
     echo('$kkkk');
+    echo($findid);
 } else {
     // The query failed, and you can handle the error here.
     echo "Query failed: " . mysqli_error($con);
