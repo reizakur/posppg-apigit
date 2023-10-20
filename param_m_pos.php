@@ -69,19 +69,19 @@ if ($kondisi_pos == 'void'){
         $id = $payment['id'] ?? '';
         $pos_id = $lastPosId ?? '';
         $invoicedamt = $payment['invoicedamt'] ?? '';
-        $payamt = $payment['payamt'];
-        $bill = $payment['bill'];
-        $changeamt = $payment['changeamt'];
-        $ptype = $payment['ptype'];
-        $edc_id = $payment['edc_id'];
-        $card_id = $payment['card_id'];
-        $cardnumber = $payment['cardnumber'];
-        $cardname = $payment['cardname'];
-        $trxtime = $payment['trxtime'];
-        $created_at = $payment['created_at'];
-        $updated_at = $payment['updated_at'];
-        $created_by = $payment['created_by'];
-        $updated_by = $payment['updated_by'];
+        $payamt = $payment['payamt'] ?? '';
+        $bill = $payment['bill'] ?? '';
+        $changeamt = $payment['changeamt'] ?? '';
+        $ptype = $payment['ptype'] ?? '';
+        $edc_id = $payment['edc_id'] ?? '';
+        $card_id = $payment['card_id'] ?? '';
+        $cardnumber = $payment['cardnumber'] ?? '';
+        $cardname = $payment['cardname'] ?? '';
+        $trxtime = $payment['trxtime'] ?? '';
+        $created_at = $payment['created_at'] ?? '';
+        $updated_at = $payment['updated_at'] ?? '';
+        $created_by = $payment['created_by'] ?? '';
+        $updated_by = $payment['updated_by'] ?? '';
         $kondisi_pospayment = $payment['kondisi_pospayment'];
 
  if ($kondisi_pospayment == 'void'){
