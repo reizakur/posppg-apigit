@@ -68,7 +68,7 @@ if ($findid) {
         echo('ausssss');
         echo($datequ);
         $numberadd++;
-        $mergerdoc = $numberadd+$datequ;
+        $mergerdoc = $numberadd.$datequ;
         echo('$mergerdoc888');
         echo($mergerdoc);
                 // $numericPart = intval($documentno) - intval($nodocumentexplode);
