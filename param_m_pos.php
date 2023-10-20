@@ -80,9 +80,9 @@ if ($kondisi_pos == 'void'){
  if ($kondisi_pospayment == 'void'){
     echo("duasatu");
     $sqlsatu = mysqli_query($con,"insert into m_vpospayment 
-    (id, pos_id, invoicedamt, payamt, changeamt, ptype, edc_id, card_id, cardnumber, cardname, trxtime, created_at, updated_at, created_by, updated_by)
+    (pos_id, invoicedamt, payamt, changeamt, ptype, edc_id, card_id, cardnumber, cardname, trxtime, created_at, updated_at, created_by, updated_by)
     values 
-    ('$id', '$pos_id', '$invoicedamt', '$payamt', '$changeamt', '$ptype', '$edc_id', '$card_id', '$cardnumber', '$cardname', '$trxtime', '$created_at', '$updated_at', '$created_by', '$updated_by')");
+    ('$pos_id', '$invoicedamt', '$payamt', '$changeamt', '$ptype', '$edc_id', '$card_id', '$cardnumber', '$cardname', '$trxtime', '$created_at', '$updated_at', '$created_by', '$updated_by')");
     $go=mysqli_query($con,$sqlsatu); 
     // ... access other fields in data_m_vpospayment ...
 
@@ -90,9 +90,9 @@ if ($kondisi_pos == 'void'){
  }else{
     echo("duasatutigas");
     $sqlsatu = mysqli_query($con,"insert into m_pospayment 
-    (id, pos_id, bill, payamt, changeamt, ptype, edc_id, card_id, cardnumber, cardname, trxtime, created_at, updated_at, created_by, updated_by)
+    (pos_id, bill, payamt, changeamt, ptype, edc_id, card_id, cardnumber, cardname, trxtime, created_at, updated_at, created_by, updated_by)
     values 
-    ('$id', '$pos_id', '$bill', '$payamt', '$changeamt', '$ptype', '$edc_id', '$card_id', '$cardnumber', '$cardname', '$trxtime', '$created_at', '$updated_at', '$created_by', '$updated_by')");
+    ('$pos_id', '$bill', '$payamt', '$changeamt', '$ptype', '$edc_id', '$card_id', '$cardnumber', '$cardname', '$trxtime', '$created_at', '$updated_at', '$created_by', '$updated_by')");
     $go=mysqli_query($con,$sqlsatu); 
     // ... access other fields in data_m_vpospayment ...
  }
