@@ -3,10 +3,10 @@ include ("koneksi.php");
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $company = $_POST['company']; 
     $geturl = $_POST['geturl']; 
-    $datampos = $_POST['datampos'];    
-    $datampos = $_POST['datampos'];
+    $datampos = $_POST['datampos'];     
     // echo($datampos);
-  
+    echo($datampos);
+    echo('$datampos555');
   $jsonData = $_POST['datampos'];
 echo('$data 7777');
 $data = json_decode($jsonData, true);
