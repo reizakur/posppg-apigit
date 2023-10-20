@@ -44,7 +44,7 @@ $go=mysqli_query($con,$sqlsatu);
                 }
 
                 // Loop through the 'datamshiftbonmanual' array
-                foreach ($data['data_m_inventoryline'] as $shiftBonManual) {
+                foreach ($item['data_m_inventoryline'] as $shiftBonManual) {
                     echo ('satu128');
                     $id = $items['id'];
                     $product_id = $items['product_id'];
@@ -58,7 +58,7 @@ $go=mysqli_query($con,$sqlsatu);
                     $updated_by = $items['updated_by'];
 
                
-                     $sqlsatu = mysqli_query($con,"insert into m_inventoryline 
+                     $sqlsatu = mysqli_query($con,"insert into   
                      (product_id, qty, uom_id, trxtime, inventory_id, created_at, updated_at, created_by, updated_by)
                      values 
                      ('$product_id', '$qty', '$uom_id', '$trxtime', '$inventory_id', '$created_at', '$updated_at', '$created_by', '$updated_by')");
