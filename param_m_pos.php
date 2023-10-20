@@ -3,16 +3,15 @@ include ("koneksi.php");
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $company = $_POST['company']; 
     $geturl = $_POST['geturl']; 
-    $datampos = $_POST['datampos'];
-    
+    $datampos = $_POST['datampos'];    
     $datampos = $_POST['datampos'];
     // echo($datampos);
   
   $jsonData = $_POST['datampos'];
-
+echo('$data 7777');
 $data = json_decode($jsonData, true);
-// echo($data);
-// echo('$data ooooo');
+echo($data);
+echo('$data 33333');
 foreach ($data['data'] as $item) { 
 echo('kkkk');
 // echo($item['documentno']);
@@ -289,73 +288,7 @@ if($kondisi_pos_treatment == 'void'){
             }
 
            }
-
-        // Access m_vposline_promo
-        // foreach ($posline['m_vposline_promo'] as $promo) {
-        //     $id =  $promo['id'];
-        //     $pos_id = $lastPosId;
-        //     $posline_id = $lastPosLineId;
-        //     $promo_id = $promo['promo_id'];
-        //     $promoline_id = $promo['promoline_id'];
-        //     $qty = $promo['qty'];
-        //     $discount = $promo['discount'];
-        //     $discountamt = $promo['discountamt'];
-        //     $created_at = $promo['created_at'];
-        //     $updated_at = $promo['updated_at'];
-        //     $created_by = $promo['created_by'];
-        //     $updated_by = $promo['updated_by'];
-
-
-
-        //     $sqlsatu = mysqli_query($con,"insert into m_posline_promo 
-        //     (pos_id, posline_id, promo_id, promoline_id, qty, discount, discountamt, created_at, updated_at, created_by, updated_by) 
-        //     values 
-        //     ('$pos_id', '$posline_id', '$promo_id', '$promoline_id', '$qty', '$discount', '$discountamt', '$created_at', '$updated_at', '$created_by', '$updated_by')");
-        //     $go=mysqli_query($con,$sqlsatu); 
-
-           
-        //     if($sqlsatu){
-        //         echo "m_vposline_promo berhasil";
-        //         echo "Record inserted successfully yang m_psnya.<br>";
-        //        $lastPosLineId = mysqli_insert_id($con); 
-        //     }else{              
-        //         echo "m_vposline_promo gagal";
-        //          echo "Error: " . mysqli_error($con);  
-        //     }
-        //     } 
-
-
-        //     foreach ($posline['m_posline_promo'] as $promo) {
-        //         $id =  $promo['id'];
-        //         $pos_id = $lastPosId;
-        //         $posline_id = $lastPosLineId;
-        //         $promo_id = $promo['promo_id'];
-        //         $promoline_id = $promo['promoline_id'];
-        //         $qty = $promo['qty'];
-        //         $discount = $promo['discount'];
-        //         $discountamt = $promo['discountamt'];
-        //         $created_at = $promo['created_at'];
-        //         $updated_at = $promo['updated_at'];
-        //         $created_by = $promo['created_by'];
-        //         $updated_by = $promo['updated_by'];   
-    
-    
-        //         $sqlsatu = mysqli_query($con,"insert into m_posline_promo 
-        //         (pos_id, posline_id, promo_id, promoline_id, qty, discount, discountamt, created_at, updated_at, created_by, updated_by) 
-        //         values 
-        //         ('$pos_id', '$posline_id', '$promo_id', '$promoline_id', '$qty', '$discount', '$discountamt', '$created_at', '$updated_at', '$created_by', '$updated_by')");
-        //         $go=mysqli_query($con,$sqlsatu); 
-    
-               
-        //         if($sqlsatu){
-        //             echo "m_vposline_promo berhasil";
-        //             echo "Record inserted successfully yang m_psnya.<br>";
-        //            $lastPosLineId = mysqli_insert_id($con); 
-        //         }else{              
-        //             echo "m_vposline_promo gagal";
-        //              echo "Error: " . mysqli_error($con);  
-        //         }
-        //         } 
+ 
     }
 }
 }
