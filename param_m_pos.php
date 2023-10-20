@@ -10,8 +10,10 @@ $jsonData = $_POST['datampos'];
 // echo($data);
 if ($data != null) { 
 echo("damn 555");
+echo($data);
 }else{ 
     echo("damn 333");
+    echo($data);
 }
 // print_r($data); 
 echo('$data 33333');
@@ -38,7 +40,7 @@ $kondisi_pos = $item['kondisi_pos'];
 
  
 if ($kondisi_pos == 'void'){
-    echo("satu");
+    echo("insert into m_vpos");
         $sqlsatu = mysqli_query($con,"insert into m_vpos 
         (documentno,ranno,dateordered,bonmanual,description,trxtime,warehouse_id,cashier_id,customer_id,gro_id,guide_id,created_at,updated_at,created_by,updated_by)
         values 
@@ -64,9 +66,9 @@ if ($kondisi_pos == 'void'){
 
     // Access data_m_vpospayment
     foreach ($item['data_m_pospayment'] as $payment) {
-        $id = $payment['id'];
-        $pos_id = $lastPosId;
-        $invoicedamt = $payment['invoicedamt'];
+        $id = $payment['id'] ?? '';
+        $pos_id = $lastPosId ?? '';
+        $invoicedamt = $payment['invoicedamt'] ?? '';
         $payamt = $payment['payamt'];
         $bill = $payment['bill'];
         $changeamt = $payment['changeamt'];
