@@ -48,10 +48,13 @@ echo('$gggggg');
 echo($nodocumentexplode);
 $findid = mysqli_query($con,"select * from m_pos WHERE documentno LIKE '%$nodocumentexplode%' ORDER BY documentno DESC limit 1");
 $go=mysqli_query($con,$sqlsatu); 
-echo('$kkkk');
-echo($go);
-echo($findid);
-echo('$findid888');
+if ($findid) {
+    // The query ran successfully, you can proceed with further operations here.
+    echo('$kkkk');
+} else {
+    // The query failed, and you can handle the error here.
+    echo "Query failed: " . mysqli_error($con);
+}
 
 // if($id)
 echo('$formattedDate666');
