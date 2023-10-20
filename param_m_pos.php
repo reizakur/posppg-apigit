@@ -14,6 +14,8 @@ $data = json_decode($jsonData, true);
 echo($data);
 echo('$data ooooo');
 foreach ($data['data'] as $item) { 
+echo('kkkk');
+echo($item['documentno']);
 $id = $item['id'];
 $documentno = $item['documentno'];
 $ranno = $item['ranno'];
