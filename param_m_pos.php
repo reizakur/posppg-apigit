@@ -6,13 +6,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $datampos = $_POST['datampos'];
     
     $datampos = $_POST['datampos'];
-    echo($datampos);
-        echo("hmmmmm");
+    // echo($datampos);
   
   $jsonData = $_POST['datampos'];
 
 $data = json_decode($jsonData, true);
-echo($data);
+// echo($data);
 foreach ($data['data'] as $item) { 
 $id = $item['id'];
 $documentno = $item['documentno'];
