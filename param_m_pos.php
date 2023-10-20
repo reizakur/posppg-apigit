@@ -35,7 +35,8 @@ $now = new DateTime();
 $formattedDate = $now->format('Y-m-d');
 echo($formattedDate);
 echo('$formattedDate123123');
-list($year, $month, $day) = explode("-", $date);
+$explodedate = explode("-", $date);
+echo($explodedate[0]);
 echo(explode("-", $date));
 echo('$formattedDate123123 date');
 
