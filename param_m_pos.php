@@ -47,7 +47,7 @@ $nodocumentexplode = $day . $month . $year;
 echo('$gggggg');
 echo($nodocumentexplode);
 $findid = mysqli_query($con,"select documentno from m_pos WHERE documentno LIKE '%$nodocumentexplode%' ORDER BY documentno DESC limit 1");
-$go=mysqli_query($con,$sqlsatu); 
+$go=mysqli_query($con,$findid); 
 if ($findid) {
     // The query ran successfully, you can proceed with further operations here.
     echo('$kkkk');
