@@ -30,7 +30,7 @@ $updated_at = $item['updated_at'];
 $created_by = $item['created_by'];
 $updated_by = $item['updated_by'];
 $kondisi_pos = $item['kondisi_pos'];
-
+echo('$pppppp');
 $now = new DateTime();
 $formattedDate = $now->format('Y-m-d');
 list($year, $month, $day) = explode("-", $date);
@@ -44,7 +44,7 @@ if (strlen($day) == 1) {
 }
 
 $nodocumentexplode = $day . $month . $year; 
-
+echo('$gggggg');
 $findid = mysqli_query($con,"SELECT * FROM m_pos WHERE documentno LIKE '%$nodocumentexplode%' ORDER BY documentno DESC limit 1");
 echo($findid);
 echo('$findid888');
