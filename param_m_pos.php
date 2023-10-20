@@ -58,7 +58,7 @@ if ($findid) {
     $row = mysqli_fetch_assoc($findid);    
     if ($row) {
         $documentno = $row['documentno'];
-        $numericPart = intval($lastID) - intval($date);
+        $numericPart = intval($documentno) - intval($nodocumentexplode);
         echo('$numericPart99999');
         echo($numericPart);
         $lastPart = sprintf('%04d', $numericPart);
