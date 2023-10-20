@@ -33,29 +33,42 @@ $kondisi_pos = $item['kondisi_pos'];
 
 $now = new DateTime();
 $formattedDate = $now->format('Y-m-d');
-echo($formattedDate);
+list($year, $month, $day) = explode("-", $date);
+
+$year = substr($year, -2);
+if (strlen($month) == 1) {
+    $month = "0" . $month;
+}
+if (strlen($day) == 1) {
+    $day = "0" . $day;
+}
+
+$nodocumentexplode = $day . $month . $year; 
+
+$findid = mysqli_query($con,"SELECT * FROM m_pos WHERE documentno LIKE '%$nodocumentexplode%' ORDER BY documentno DESC limit 1");
+echo($findid);
+echo('$findid888');
+$go=mysqli_query($con,$sqlsatu); 
+// if($id)
 echo('$formattedDate666');
 if ($kondisi_pos == 'void'){
     echo("insert into m_vpos");
         $sqlsatu = mysqli_query($con,"insert into m_vpos 
         (documentno,ranno,dateordered,bonmanual,description,trxtime,warehouse_id,cashier_id,customer_id,gro_id,guide_id,created_at,updated_at,created_by,updated_by)
         values 
-        ('$documentno', '$ranno', '$dateordered', '$bonmanual', '$description', '$trxtime', '$syncedbi', '$syncedadem', '$warehouse_id', '$cashier_id', '$customer_id', '$gro_id', '$guide_id', '$created_at', '$updated_at', '$created_by', '$updated_by')");
+        ('$nodocumentexplode', '$ranno', '$dateordered', '$bonmanual', '$description', '$trxtime', '$syncedbi', '$syncedadem', '$warehouse_id', '$cashier_id', '$customer_id', '$gro_id', '$guide_id', '$created_at', '$updated_at', '$created_by', '$updated_by')");
         $go=mysqli_query($con,$sqlsatu); 
     }else{
         echo("dua");
         $sqlsatu = mysqli_query($con,"insert into m_pos 
         (documentno,ranno,dateordered,bonmanual,description,trxtime,syncedbi,syncedadem,warehouse_id,cashier_id,customer_id,gro_id,guide_id,created_at,updated_at,created_by,updated_by)
         values 
-        ('$documentno', '$ranno', '$dateordered', '$bonmanual', '$description', '$trxtime', '$syncedbi', '$syncedadem', '$warehouse_id', '$cashier_id', '$customer_id', '$gro_id', '$guide_id', '$created_at', '$updated_at', '$created_by', '$updated_by')");
+        ('$nodocumentexplode', '$ranno', '$dateordered', '$bonmanual', '$description', '$trxtime', '$syncedbi', '$syncedadem', '$warehouse_id', '$cashier_id', '$customer_id', '$gro_id', '$guide_id', '$created_at', '$updated_at', '$created_by', '$updated_by')");
         $go=mysqli_query($con,$sqlsatu); 
     }
-    if($sqlsatu){
-        // echo "m_pos berhasil";
-        //  echo "Record inserted successfully yang m_psnya.<br>";
-       $lastPosId = mysqli_insert_id($con); 
-    }else{
-      
+    if($sqlsatu){ 
+        $lastPosId = mysqli_insert_id($con); 
+    }else{ 
         echo "m_pos gagal";
          echo "Error: " . mysqli_error($con);  
     }
