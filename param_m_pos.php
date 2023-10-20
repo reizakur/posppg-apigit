@@ -49,9 +49,15 @@ echo($nodocumentexplode);
 $findid = mysqli_query($con,"select documentno from m_pos WHERE documentno LIKE '%$nodocumentexplode%' ORDER BY documentno DESC limit 1");
 $go=mysqli_query($con,$findid); 
 if ($findid) {
-    // The query ran successfully, you can proceed with further operations here.
-    echo('$kkkk');
-    echo($findid);
+    $row = mysqli_fetch_assoc($findid);
+    
+    if ($row) {
+        $documentno = $row['documentno'];
+        echo "Last Document Number: $documentno";
+    } else {
+        echo "No results found.";
+    }
+  
 } else {
     // The query failed, and you can handle the error here.
     echo "Query failed: " . mysqli_error($con);
