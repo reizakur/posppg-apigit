@@ -13,6 +13,7 @@ echo($jsonData);
 echo('$data oolll');
 $data = json_decode($jsonData, true);
 echo($data);
+print_r($data); 
 echo('$data 33333');
 foreach ($data['data'] as $item) { 
 echo('kkkk');
