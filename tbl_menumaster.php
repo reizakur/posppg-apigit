@@ -5,14 +5,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $icpl = $_POST['icpl']; 
   $data = [ 
                     [
-                        "id_y" => "1",
+                        "id" => "1",
                         "name" => "Category Y1", 
                         "parent_id" => "",
                         "summary" => "Y",
                         "data_m_product_menu"=> []
                     ], 
                         [
-                            "id_n" => "1",
+                            "id" => "1",
                             "name" => "Category N1", 
                             "parent_id" => "1",
                             "summary" => "N",
@@ -21,21 +21,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     // ],
 
                         [
-                            "id_y" => "2",
+                            "id" => "2",
                             "name" => "Category Y2", 
                             "parent_id" => "",
                             "summary" => "Y",
                             "data_m_menu_category_n" => []
                         ],
                         [
-                            "id_y" => "3",
+                            "id" => "3",
                             "name" => "Category Y3",                        
                             "parent_id" => "",
                             "summary" => "Y",                            
                             "data_m_menu_category_n" => []
                         ],
                         [
-                            "id_n" => "1",
+                            "id" => "1",
                             "name" => "Category N1",
                             "parent_id" => "3",
                             "summary" => "N",
@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     ]
                         ],
                         [
-                            "id_n" => "2",
+                            "id" => "2",
                             "name" => "Category N2",                                   
                             "parent_id" => "3",
                             "summary" => "N",
