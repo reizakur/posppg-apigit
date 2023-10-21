@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         "data_m_product_menu"=> []
                     ], 
                         [
-                            "id" => "1",
+                            "id" => "2",
                             "name" => "Category N1", 
                             "parent_id" => "1",
                             "summary" => "N",
@@ -21,21 +21,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     // ],
 
                         [
-                            "id" => "2",
+                            "id" => "3",
                             "name" => "Category Y2", 
                             "parent_id" => "",
                             "summary" => "Y",
                             "data_m_menu_category_n" => []
                         ],
                         [
-                            "id" => "3",
+                            "id" => "4",
                             "name" => "Category Y3",                        
                             "parent_id" => "",
                             "summary" => "Y",                            
                             "data_m_menu_category_n" => []
                         ],
                         [
-                            "id" => "1",
+                            "id" => "5",
                             "name" => "Category N1",
                             "parent_id" => "3",
                             "summary" => "N",
@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     ]
                         ],
                         [
-                            "id" => "2",
+                            "id" => "6",
                             "name" => "Category N2",                                   
                             "parent_id" => "3",
                             "summary" => "N",
