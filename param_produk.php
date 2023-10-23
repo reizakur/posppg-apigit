@@ -8,22 +8,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         $icplValue = "ICPL29";
         $effectiveDate = "2023-10-01";
-        $priceValue = "100.00";
+        $priceValue = 100.00;
     } elseif ($icpl == "ICPL30") {
         
         $icplValue = "ICPL30";
         $effectiveDate = "2023-10-02";
-        $priceValue = "150.00";
+        $priceValue = 150.00;
     } elseif ($icpl == "ICPL31") {
         
         $icplValue = "ICPL31";
         $effectiveDate = "2023-10-03";
-        $priceValue = "200.00";
+        $priceValue = 200.00;
     } else {
         
         $icplValue = "DefaultICPL";
         $effectiveDate = "2023-10-01";
-        $priceValue = "100.00";
+        $priceValue = 100.00;
     }
     
   
@@ -34,16 +34,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             // "product_id" => "Product1",
                             "menu_category_id" => "1",
                             // "active_m_product_menu" => "true",
-                            "id_m_product" => "1",
+                            "id" => "1",
                             "value" => "100.00",
                             "name" => "Product Name 1",
                             "stocked" => "true",
                             "treatment" => "Treatment1",
                             "sold" => "Sold1",
                             "konsinyasi" => "Konsinyasi1",
-                            "mingguan" => "Mingguan1",
-                            "harian" => "Harian1",
-                            "bulanan" => "Bulanan1",
+                            "mingguan" => "Y",
+                            "harian" => "Y",
+                            "bulanan" => "N",
                             "uom_id" => "1",
                             "category_id" => "1",
                             // "active_m_product" => "true",
@@ -54,23 +54,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             // "id_m_product_price" => "1",
                             "icpl" => "$icplValue",
                             "effective" => "$effectiveDate",
-                            "price" => "$priceValue"
+                            "price" => $priceValue
                         ],
                         [
                             "id_m_product_menu" => "2",
                             // "product_id" => "Product2",
                             "menu_category_id" => "1",
                             // "active_m_product_menu" => "true",
-                            "id_m_product" => "2",
+                            "id" => "2",
                             "value" => "200.00",
                             "name" => "Product Name 2",
                             "stocked" => "true",
                             "treatment" => "Treatment2",
                             "sold" => "Sold2",
                             "konsinyasi" => "Konsinyasi2",
-                            "mingguan" => "Mingguan2",
-                            "harian" => "Harian2",
-                            "bulanan" => "Bulanan2",
+                            "mingguan" => "Y",
+                            "harian" => "Y",
+                            "bulanan" => "Y",
                             "uom_id" => "2",
                             "category_id" => "2",
                             // "active_m_product" => "true",
@@ -81,23 +81,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             // "id_m_product_price" => "2",
                             "icpl" => "$icplValue",
                             "effective" => "$effectiveDate",
-                            "price" => "$priceValue"
+                            "price" => $priceValue
                         ],
                         [
                             "id_m_product_menu" => "3",
                             // "product_id" => "Product3",
                             "menu_category_id" => "2",
                             // "active_m_product_menu" => "true",
-                            "id_m_product" => "3",
+                            "id" => "3",
                             "value" => "300.00",
                             "name" => "Product Name 3",
                             "stocked" => "true",
                             "treatment" => "Treatment3",
                             "sold" => "Sold3",
                             "konsinyasi" => "Konsinyasi3",
-                            "mingguan" => "Mingguan3",
-                            "harian" => "Harian3",
-                            "bulanan" => "",
+                            "mingguan" => "Y",
+                            "harian" => "N",
+                            "bulanan" => "Y",
                             "uom_id" => "",
                             "category_id" => "",
                             // "active_m_product" => "",
@@ -108,7 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             // "id_m_product_price" => "3",
                             "icpl" => "$icplValue",
                             "effective" => "$effectiveDate",
-                            "price" => "$priceValue"
+                            "price" => $priceValue
                         ],
                     ]
                 
@@ -130,3 +130,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ];
     echo json_encode($response);
 }
+?>
